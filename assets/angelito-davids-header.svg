@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 92" role="img" aria-labelledby="title desc">
+<title id="title">Angelito Davids</title>
+<desc id="desc">AD monogram and Angelito Davids wordmark</desc>
+<rect width="520" height="92" fill="none"/>
+<g transform="translate(3 8)">
+  <path d="M38 72 12 25 30 8 52 8 73 25 47 72Z" fill="none" stroke="#F4F4ED" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M25 55 42 23 59 55" fill="none" stroke="#D9FF2F" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M76 14 105 14 105 72 88 72 88 31 76 31Z" fill="#F4F4ED"/>
+  <path d="M90 72 90 39 108 22 126 39 126 72 108 72 108 47 105 44 105 72Z" fill="#D9FF2F"/>
+</g>
+<g font-family="Arial, Helvetica, sans-serif" font-weight="800" letter-spacing="2">
+  <text x="142" y="47" font-size="25" fill="#F4F4ED">ANGELITO</text>
+  <text x="142" y="75" font-size="25" fill="#D9FF2F">DAVIDS</text>
+</g>
+</svg>

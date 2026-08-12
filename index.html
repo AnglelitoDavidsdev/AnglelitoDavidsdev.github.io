@@ -188,6 +188,26 @@
         .profile-section {
             background: var(--bg-elevated);
             padding: 6rem 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('sa-flag-bg.png') center/cover no-repeat;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .profile-inner {
+            position: relative;
+            z-index: 1;
         }
         .profile-inner {
             max-width: 1200px; margin: 0 auto;
@@ -2450,7 +2470,6 @@
             .trade-btns { grid-template-columns: 1fr; }
         }
     </style>
-<base target="_blank">
 </head>
 <body>
     <!-- Sidebar -->

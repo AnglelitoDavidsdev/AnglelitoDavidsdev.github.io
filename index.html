@@ -697,6 +697,236 @@
         .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
         .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+        /* ===== HERO SHOWCASE ===== */
+        .hero-showcase {
+            display: grid;
+            grid-template-columns: 340px 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            align-items: start;
+        }
+
+        .hero-photo-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s;
+        }
+
+        .hero-photo-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--lime);
+            box-shadow: 0 0 20px rgba(204,255,0,0.3);
+        }
+
+        .hero-photo-card:hover {
+            border-color: var(--border-light);
+            transform: translateY(-4px);
+        }
+
+        .hero-photo-wrap {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-photo {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            border-radius: 14px;
+            display: block;
+            border: 2px solid var(--border);
+        }
+
+        .hero-photo-badge {
+            position: absolute;
+            bottom: -10px;
+            right: 1rem;
+            background: var(--lime);
+            color: #000;
+            padding: 0.4rem 1rem;
+            font-size: 0.7rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 4px;
+        }
+
+        .hero-photo-info h2 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-photo-info h2 span {
+            color: var(--lime);
+        }
+
+        .hero-photo-role {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--lime);
+            margin-bottom: 1rem;
+        }
+
+        .hero-photo-bio {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        /* Adjust exhibition within showcase */
+        .hero-showcase .hero-exhibition {
+            margin-top: 0;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .hero-showcase .exhibit-featured {
+            grid-column: 1 / -1;
+        }
+
+        /* ===== HERO EXHIBITION ===== */
+        .hero-exhibition {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1fr;
+            gap: 1.25rem;
+            margin-top: 3rem;
+        }
+
+        .exhibit-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .exhibit-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--border);
+            transition: all 0.4s;
+        }
+
+        .exhibit-card:hover::before {
+            background: var(--lime);
+            box-shadow: 0 0 20px rgba(204,255,0,0.3);
+        }
+
+        .exhibit-card:hover {
+            border-color: var(--border-light);
+            transform: translateY(-6px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+        }
+
+        .exhibit-featured {
+            background: linear-gradient(145deg, var(--surface) 0%, #161a0a 100%);
+            border-color: rgba(204,255,0,0.15);
+        }
+
+        .exhibit-featured:hover {
+            border-color: rgba(204,255,0,0.4);
+        }
+
+        .exhibit-glow {
+            position: absolute;
+            top: -50%; right: -50%;
+            width: 300px; height: 300px;
+            background: radial-gradient(circle, rgba(204,255,0,0.08) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .exhibit-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.7rem;
+            color: var(--text-muted);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .exhibit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .exhibit-card h3 {
+            font-size: 1.6rem;
+            font-weight: 900;
+            letter-spacing: -1px;
+            color: #fff;
+            margin-bottom: 0.25rem;
+        }
+
+        .exhibit-brand {
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--lime);
+            margin-bottom: 1rem;
+        }
+
+        .exhibit-desc {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .exhibit-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .exhibit-tags span {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            background: var(--bg);
+            border: 1px solid var(--border);
+            padding: 0.35rem 0.7rem;
+            border-radius: 4px;
+        }
+
+        .exhibit-cta {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--lime);
+            text-transform: uppercase;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s;
+        }
+
+        .exhibit-card:hover .exhibit-cta {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
         /* ===== RESPONSIVE ===== */
         @media (max-width: 1024px) {
             .terminal-body { grid-template-columns: 1fr; }
@@ -705,12 +935,20 @@
             .profile-socials { justify-content: center; }
             .guard-inner { grid-template-columns: 1fr; gap: 3rem; }
         }
+        @media (max-width: 1100px) {
+            .hero-showcase { grid-template-columns: 1fr; }
+            .hero-showcase .hero-exhibition { grid-template-columns: 1fr 1fr; }
+            .hero-showcase .exhibit-featured { grid-column: 1 / -1; }
+        }
+
         @media (max-width: 900px) {
             .sidebar { display: none; }
             .main { margin-left: 0; }
             .navbar { left: 0; }
             footer { margin-left: 0; }
             .modminer-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-showcase .hero-exhibition { grid-template-columns: 1fr; }
+            .hero-showcase .exhibit-featured { grid-column: auto; }
         }
         @media (max-width: 600px) {
             .navbar { padding: 0 1.5rem; }
@@ -755,15 +993,51 @@
         <section class="hero">
             <div class="hero-content">
                 <span class="hero-label">ANGELITO DAVIDS / FULL-TIME TRADER & BUILDER</span>
-                <h1 class="hero-title">
-                    <span class="white">I TRADE WITH</span>
-                    <span class="lime">DISCIPLINE.</span>
-                </h1>
-                <p class="hero-subtitle">THE PROTECTION LAYER I BUILT FOR MY OWN TRADING SYSTEM.</p>
-                <p class="hero-subtitle" style="margin-top:-1.5rem; font-size:0.95rem;">I built Guard.Angel because I needed a system that enforces discipline when emotions run high. Every day, it manages my risk, locks in profits automatically, and keeps me accountable — so I can focus on the setup, not the stress. This is the exact tool I use on every trade, every session.</p>
-                <div class="hero-buttons">
-                    <a href="#panel" class="btn-lime">SEE HOW I TRADE →</a>
-                    <a href="#profile" class="btn-dark">MY STORY ↓</a>
+
+                <!-- Hero with Photo + Products -->
+                <div class="hero-showcase">
+                    <div class="hero-photo-card">
+                        <div class="hero-photo-wrap">
+                            <img src="profile.png" alt="Angelito Davids" class="hero-photo">
+                            <div class="hero-photo-badge">FOUNDER</div>
+                        </div>
+                        <div class="hero-photo-info">
+                            <h2>ANGELITO <span>DAVIDS</span></h2>
+                            <p class="hero-photo-role">TRADER · ENGINEER · BUILDER</p>
+                            <p class="hero-photo-bio">I build the tools I use every day. Guard.Angel protects my trades. MODKRAFT builds the future.</p>
+                        </div>
+                    </div>
+
+                    <div class="hero-exhibition">
+                    <div class="exhibit-card exhibit-featured" onclick="document.getElementById('panel').scrollIntoView({behavior:'smooth'})">
+                        <div class="exhibit-glow"></div>
+                        <span class="exhibit-number">01</span>
+                        <div class="exhibit-icon">🛡️</div>
+                        <h3>GUARD.ANGEL</h3>
+                        <p class="exhibit-brand">TRDE.CREED</p>
+                        <p class="exhibit-desc">The protection layer I built for my own trading. Automated risk management, disciplined position sizing, and real-time monitoring.</p>
+                        <div class="exhibit-tags">
+                            <span>MT5 EA</span>
+                            <span>300 PIP SL</span>
+                            <span>2% RISK</span>
+                        </div>
+                        <div class="exhibit-cta">EXPLORE →</div>
+                    </div>
+
+                    <div class="exhibit-card" onclick="document.getElementById('modminer').scrollIntoView({behavior:'smooth'})">
+                        <span class="exhibit-number">02</span>
+                        <div class="exhibit-icon">⚙️</div>
+                        <h3>MODMINER</h3>
+                        <p class="exhibit-brand">MODKRAFT</p>
+                        <p class="exhibit-desc">Heavy-duty tracked mining platform engineered around modularity, material handling, and field serviceability.</p>
+                        <div class="exhibit-tags">
+                            <span>MODULAR</span>
+                            <span>HEAVY DUTY</span>
+                        </div>
+                        <div class="exhibit-cta">MEET MODKRAFT →</div>
+                    </div>
+
+                </div>
                 </div>
             </div>
         </section>

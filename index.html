@@ -2323,6 +2323,32 @@
             transform: scale(1.03);
         }
 
+        .exhibit-logo-wrap {
+            width: 100%;
+            height: 140px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .exhibit-logo-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            padding: 0.75rem;
+            transition: transform 0.4s;
+        }
+
+        .exhibit-card:hover .exhibit-logo-img {
+            transform: scale(1.08) rotate(5deg);
+        }
+
         .exhibit-card h3 {
             font-size: 1.6rem;
             font-weight: 900;
@@ -2555,7 +2581,9 @@
 
                     <div class="exhibit-card" onclick="document.getElementById('modminer').scrollIntoView({behavior:'smooth'})">
                         <span class="exhibit-number">02</span>
-                        <div class="exhibit-icon">⚙️</div>
+                        <div class="exhibit-logo-wrap">
+                            <img src="modminer-logo.png" alt="MODMINER" class="exhibit-logo-img">
+                        </div>
                         <h3>MODMINER</h3>
                         <p class="exhibit-brand">MODKRAFT</p>
                         <p class="exhibit-desc">Heavy-duty tracked mining platform engineered around modularity, material handling, and field serviceability.</p>

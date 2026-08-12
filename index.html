@@ -748,35 +748,119 @@
             font-weight: 600; margin-top: 0.5rem;
         }
 
-        /* ===== STM ===== */
-        .stm-section { background: var(--bg-elevated); }
-        .stm-visual {
-            background: var(--surface); border: 1px solid var(--border);
-            padding: 3rem; margin-top: 3rem; text-align: center; position: relative;
+        /* ===== LURCH.AI ===== */
+        .lurch-section {
+            background: var(--bg-elevated);
+            padding: 6rem 3rem;
         }
-        .stm-visual::before {
-            content: ''; position: absolute; top: 0; left: 0; right: 0;
+
+        .lurch-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .lurch-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .lurch-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .lurch-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lurch-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--border);
+            transition: all 0.3s;
+        }
+
+        .lurch-card:hover::before {
+            background: var(--lime);
+            box-shadow: 0 0 15px rgba(204,255,0,0.2);
+        }
+
+        .lurch-card:hover {
+            border-color: var(--border-light);
+            transform: translateY(-4px);
+        }
+
+        .lurch-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .lurch-card h4 {
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--lime);
+            margin-bottom: 0.75rem;
+        }
+
+        .lurch-card p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .lurch-cta {
+            text-align: center;
+        }
+
+        .lurch-waitlist {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .lurch-waitlist::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
             height: 2px;
             background: linear-gradient(90deg, transparent, var(--lime), transparent);
         }
-        .stm-badge {
-            display: inline-flex; align-items: center; gap: 0.5rem;
-            background: rgba(204,255,0,0.08); border: 1px solid rgba(204,255,0,0.3);
-            color: var(--lime); padding: 0.5rem 1.2rem;
-            font-size: 0.7rem; font-weight: 700; letter-spacing: 2px;
-            text-transform: uppercase; margin-bottom: 1.5rem;
+
+        .lurch-waitlist-label {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: var(--lime);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
         }
-        .stm-visual h3 { font-size: 2.5rem; font-weight: 900; letter-spacing: -2px; margin-bottom: 0.3rem; }
-        .stm-visual .stm-sub { color: var(--text-muted); font-size: 0.85rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 1rem; }
-        .stm-tagline { color: var(--lime); font-size: 1.1rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2.5rem; }
-        .stm-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem; text-align: left; margin-top: 2rem;
+
+        .lurch-waitlist p {
+            color: var(--text-dim);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
-        .stm-item { background: var(--bg-elevated); border: 1px solid var(--border); padding: 1.5rem; transition: all 0.3s; }
-        .stm-item:hover { border-color: var(--lime); }
-        .stm-item h4 { font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #fff; margin-bottom: 0.5rem; }
-        .stm-item p { color: var(--text-dim); font-size: 0.85rem; line-height: 1.6; }
 
         /* ===== MODMINER ===== */
         .modminer-section { background: var(--bg); }
@@ -1171,6 +1255,477 @@
 
         .scene-container:hover .drag-hint {
             opacity: 1;
+        }
+
+        /* ===== MOD MINER PRO — DRONE ===== */
+        .mmp-section {
+            background: var(--bg);
+            padding: 6rem 3rem;
+            overflow: hidden;
+        }
+
+        .mmp-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .mmp-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .mmp-showcase {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        /* Drone Scene */
+        .drone-scene {
+            position: relative;
+            height: 450px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: radial-gradient(ellipse at center, #111 0%, transparent 70%);
+        }
+
+        .drone-float {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            animation: droneHover 3s ease-in-out infinite;
+            transform-style: preserve-3d;
+        }
+
+        @keyframes droneHover {
+            0%, 100% { transform: translateY(0) rotateX(10deg); }
+            50% { transform: translateY(-15px) rotateX(10deg); }
+        }
+
+        /* Rotors */
+        .rotor {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+        }
+
+        .rotor-bl { top: 0; left: 0; }
+        .rotor-br { top: 0; right: 0; }
+        .rotor-fl { bottom: 40px; left: 0; }
+        .rotor-fr { bottom: 40px; right: 0; }
+
+        .rotor-arm {
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #333, #555);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 2px;
+        }
+
+        .rotor-hub {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: #444;
+            border: 2px solid #666;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+        }
+
+        .blade {
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, rgba(200,200,200,0.4), transparent);
+            top: 50%;
+            left: 50%;
+            border-radius: 50%;
+            animation: spin 0.08s linear infinite;
+        }
+
+        .blade.b1 { transform: translate(-50%, -50%) rotate(0deg); }
+        .blade.b2 { transform: translate(-50%, -50%) rotate(90deg); animation-delay: 0.04s; }
+
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Drone Body */
+        .drone-body {
+            position: absolute;
+            width: 100px;
+            height: 60px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .drone-top {
+            position: absolute;
+            width: 100px;
+            height: 50px;
+            background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+            border-radius: 50%;
+            border: 2px solid #333;
+            top: 0;
+        }
+
+        .drone-front {
+            position: absolute;
+            width: 40px;
+            height: 20px;
+            background: linear-gradient(180deg, #222, #111);
+            border-radius: 0 0 20px 20px;
+            top: 35px;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 1px solid #333;
+        }
+
+        .drone-camera {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: #111;
+            border: 2px solid #444;
+            border-radius: 50%;
+            top: 38px;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+        }
+
+        .camera-lens {
+            position: absolute;
+            width: 14px;
+            height: 14px;
+            background: radial-gradient(circle, #1a3a5c, #0d1f33);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .camera-glow {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: var(--lime);
+            border-radius: 50%;
+            top: 30%;
+            right: 30%;
+            animation: camBlink 2s ease-in-out infinite;
+        }
+
+        @keyframes camBlink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+
+        .drone-light {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            top: 45px;
+        }
+
+        .drone-light.left {
+            left: 20px;
+            background: var(--red);
+            box-shadow: 0 0 8px var(--red);
+            animation: lightPulse 1s ease-in-out infinite;
+        }
+
+        .drone-light.right {
+            right: 20px;
+            background: var(--green);
+            box-shadow: 0 0 8px var(--green);
+            animation: lightPulse 1s ease-in-out infinite 0.5s;
+        }
+
+        @keyframes lightPulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        /* Welder Arm */
+        .welder-arm {
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+        }
+
+        .welder-segment {
+            background: linear-gradient(90deg, #444, #666);
+            border-radius: 3px;
+        }
+
+        .welder-segment.s1 {
+            width: 6px;
+            height: 35px;
+            margin: 0 auto;
+        }
+
+        .welder-segment.s2 {
+            width: 6px;
+            height: 25px;
+            margin: 0 auto;
+            transform: rotate(20deg);
+            transform-origin: top center;
+        }
+
+        .welder-joint {
+            width: 10px;
+            height: 10px;
+            background: #555;
+            border: 2px solid #777;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+
+        .welder-nozzle {
+            position: relative;
+            width: 8px;
+            height: 12px;
+            background: linear-gradient(180deg, #888, #333);
+            border-radius: 0 0 4px 4px;
+            margin: 0 auto;
+            transform: rotate(20deg);
+            transform-origin: top center;
+        }
+
+        .welder-tip {
+            position: absolute;
+            bottom: -3px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 4px;
+            background: #ff6600;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #ff6600, 0 0 20px #ff3300;
+        }
+
+        .welder-glow {
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(255,102,0,0.4), transparent);
+            border-radius: 50%;
+            animation: weldGlow 0.15s ease-in-out infinite alternate;
+        }
+
+        @keyframes weldGlow {
+            from { opacity: 0.6; transform: translateX(-50%) scale(0.8); }
+            to { opacity: 1; transform: translateX(-50%) scale(1.2); }
+        }
+
+        .spark {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: #ffaa00;
+            border-radius: 50%;
+            bottom: -5px;
+            left: 50%;
+            animation: sparkFly 0.4s ease-out infinite;
+        }
+
+        .spark-1 { animation-delay: 0s; --tx: -15px; --ty: 20px; }
+        .spark-2 { animation-delay: 0.1s; --tx: 10px; --ty: 25px; }
+        .spark-3 { animation-delay: 0.2s; --tx: -5px; --ty: 18px; }
+        .spark-4 { animation-delay: 0.05s; --tx: 18px; --ty: 15px; }
+        .spark-5 { animation-delay: 0.15s; --tx: -12px; --ty: 22px; }
+
+        @keyframes sparkFly {
+            0% { transform: translate(-50%, 0) scale(1); opacity: 1; }
+            100% { transform: translate(calc(-50% + var(--tx)), var(--ty)) scale(0); opacity: 0; }
+        }
+
+        /* Hose Attachment */
+        .hose-attachment {
+            position: absolute;
+            top: 50%;
+            right: -40px;
+            transform: translateY(-50%);
+        }
+
+        .hose-reel {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(145deg, #333, #222);
+            border: 2px solid #444;
+            border-radius: 4px;
+            position: relative;
+        }
+
+        .hose-reel::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background: #555;
+            border-radius: 50%;
+        }
+
+        .hose-segment {
+            width: 4px;
+            background: linear-gradient(180deg, #2a4a2a, #1a3a1a);
+            border-radius: 2px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .hose-segment::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: rgba(0,255,136,0.1);
+        }
+
+        .hose-segment.h1 { height: 15px; }
+        .hose-segment.h2 { height: 12px; transform: rotate(5deg); }
+        .hose-segment.h3 { height: 14px; transform: rotate(-3deg); }
+        .hose-segment.h4 { height: 10px; transform: rotate(8deg); }
+        .hose-segment.h5 { height: 12px; transform: rotate(-5deg); }
+
+        .hose-connector {
+            width: 8px;
+            height: 8px;
+            background: #666;
+            border-radius: 2px;
+            margin: 0 auto;
+        }
+
+        .hose-nozzle {
+            width: 6px;
+            height: 10px;
+            background: linear-gradient(180deg, #888, #555);
+            border-radius: 0 0 3px 3px;
+            margin: 0 auto;
+        }
+
+        /* Status Ring */
+        .drone-ring {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border: 1px solid rgba(204,255,0,0.08);
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: ringPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes ringPulse {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.3; }
+            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
+        }
+
+        .ring-dot {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--lime);
+            border-radius: 50%;
+            top: -2px;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 6px var(--lime);
+        }
+
+        /* Shadow */
+        .drone-shadow {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 20px;
+            background: radial-gradient(ellipse, rgba(0,0,0,0.5), transparent);
+            border-radius: 50%;
+            animation: shadowPulse 3s ease-in-out infinite;
+        }
+
+        @keyframes shadowPulse {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.5; }
+            50% { transform: translateX(-50%) scale(0.85); opacity: 0.3; }
+        }
+
+        /* Specs Panel */
+        .mmp-specs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .mmp-spec-card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .mmp-spec-card:hover {
+            border-color: var(--lime);
+            transform: translateY(-3px);
+        }
+
+        .mmp-spec-card::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: var(--lime);
+            margin-bottom: 1rem;
+            border-radius: 1px;
+        }
+
+        .mmp-spec-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .mmp-spec-card h4 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.5px;
+        }
+
+        .mmp-spec-card p {
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            line-height: 1.6;
         }
 
         /* ===== HOW IT WORKS ===== */
@@ -1860,6 +2415,10 @@
             .btn-lime, .btn-dark { width: 100%; justify-content: center; }
             .modminer-grid { grid-template-columns: 1fr; }
             .guard-stats-row { grid-template-columns: 1fr; padding: 0 1.5rem; }
+            .lurch-grid { grid-template-columns: 1fr; }
+            .mmp-showcase { grid-template-columns: 1fr; }
+            .mmp-specs { grid-template-columns: 1fr; }
+            .drone-scene { height: 350px; }
             .products-grid { grid-template-columns: 1fr; }
             .terminal-3d { transform: none !important; padding: 1rem; }
             .trade-btns { grid-template-columns: 1fr; }
@@ -1960,7 +2519,7 @@
         <!-- Hero -->
         <section class="hero">
             <div class="hero-content">
-                <span class="hero-label">ANGELITO DAVIDS / FULL-TIME TRADER & BUILDER</span>
+                <span class="hero-label">TRADER · FREELANCE CAD · HARD/SOFT ENGINEER</span>
 
                 <!-- Hero with Photo + Products -->
                 <div class="hero-showcase">
@@ -2028,7 +2587,7 @@
                 <div class="profile-text">
                     <span class="section-label">ABOUT</span>
                     <h2>ANGELITO <span>DAVIDS</span></h2>
-                    <div class="profile-role">🛡️ TRADER · ENGINEER · BUILDER</div>
+                    <div class="profile-role">🛡️ TRADER · FREELANCE CAD · HARD/SOFT ENGINEER</div>
                     <p>Building protection layers for traders and engineered systems for industry. Guard.Angel, MODMINER, and STM represent a unified philosophy: <strong style="color:var(--lime)">discipline, modularity, and intelligent execution</strong>.</p>
                     <p>Every product is built with the same core principle — protect what matters, automate the discipline, and let the system do the heavy lifting.</p>
                     <div class="profile-socials">
@@ -2227,44 +2786,43 @@
             </div>
         </section>
 
-        <!-- STM -->
-        <section id="stm" class="stm-section">
-            <div class="fade-up" style="text-align:center;">
-                <span class="section-label">TECHNOLOGY</span>
-                <h2 class="section-title">SMART <span class="lime">TRADE MANAGER</span></h2>
-                <p class="section-desc" style="margin:0 auto;">MetaTrader 5 trade-management technology powering the Guard.Angel protection layer.</p>
-            </div>
+        <!-- Lurch.AI -->
+        <section id="lurch" class="lurch-section">
+            <div class="lurch-inner">
+                <div class="lurch-header fade-up">
+                    <span class="section-label">COMING SOON</span>
+                    <h2 class="section-title">LURCH.<span class="lime">AI</span></h2>
+                    <p class="section-desc">Intelligent market analysis powered by machine learning. Lurch.AI reads the market structure, identifies high-probability setups, and feeds clean signals directly to Guard.Angel for execution.</p>
+                </div>
 
-            <div class="stm-visual fade-up">
-                <div class="stm-badge">⚡ EXPERT ADVISOR FOR MT5</div>
-                <h3>STM</h3>
-                <p class="stm-sub">SMART TRADE MANAGER</p>
-                <p class="stm-tagline">MANUAL CONTROL. AUTOMATIC PROTECTION. MAXIMUM DISCIPLINE.</p>
+                <div class="lurch-grid fade-up">
+                    <div class="lurch-card">
+                        <div class="lurch-icon">🧠</div>
+                        <h4>ML-POWERED ANALYSIS</h4>
+                        <p>Trained on thousands of hours of price action to recognize patterns humans miss.</p>
+                    </div>
+                    <div class="lurch-card">
+                        <div class="lurch-icon">📡</div>
+                        <h4>REAL-TIME SIGNALS</h4>
+                        <p>Market structure breakdown delivered instantly. No lag. No repaint.</p>
+                    </div>
+                    <div class="lurch-card">
+                        <div class="lurch-icon">🔗</div>
+                        <h4>GUARD.ANGEL INTEGRATION</h4>
+                        <p>Lurch.AI finds the setup. Guard.Angel manages the trade. Fully automated workflow.</p>
+                    </div>
+                    <div class="lurch-card">
+                        <div class="lurch-icon">🎯</div>
+                        <h4>CLEAN SETUPS ONLY</h4>
+                        <p>No noise. No clutter. Just A+ setups with defined entry, stop, and target.</p>
+                    </div>
+                </div>
 
-                <div class="stm-grid">
-                    <div class="stm-item">
-                        <h4>🛡️ TIGHT 300 PIP SL</h4>
-                        <p>Strong protection from the moment you enter the trade.</p>
-                    </div>
-                    <div class="stm-item">
-                        <h4>🎯 SMART PROFIT SYSTEM</h4>
-                        <p>TP1 partial close, TP2 locks profit, TP3 closes all at +$100.</p>
-                    </div>
-                    <div class="stm-item">
-                        <h4>🔒 BREAKEVEN PROTECTION</h4>
-                        <p>Moves SL to entry after +$20 profit to eliminate risk.</p>
-                    </div>
-                    <div class="stm-item">
-                        <h4>📊 AUTO LOT CALCULATION</h4>
-                        <p>Risk 2% per trade. Accurate lot size based on SL distance.</p>
-                    </div>
-                    <div class="stm-item">
-                        <h4>🎮 MANUAL CONTROL</h4>
-                        <p>You decide. STM manages. No automatic entries.</p>
-                    </div>
-                    <div class="stm-item">
-                        <h4>💰 PARTIAL CLOSE</h4>
-                        <p>Lock in profits systematically at each take profit level.</p>
+                <div class="lurch-cta fade-up">
+                    <div class="lurch-waitlist">
+                        <span class="lurch-waitlist-label">JOIN THE WAITLIST</span>
+                        <p>Be the first to access Lurch.AI when it drops. Early adopters get lifetime pricing.</p>
+                        <a href="#contact" class="btn-lime">GET EARLY ACCESS →</a>
                     </div>
                 </div>
             </div>
@@ -2462,6 +3020,128 @@
             </div>
         </section>
     </div>
+
+    <!-- MOD MINER PRO — Maintenance Drone -->
+    <section id="modminer-pro" class="mmp-section">
+        <div class="mmp-inner">
+            <div class="mmp-header fade-up">
+                <span class="section-label">MODKRAFT PRO SERIES</span>
+                <h2 class="section-title">MODMINER <span class="lime">PRO</span></h2>
+                <p class="section-desc">Autonomous maintenance drone with integrated welder and hydraulic hose attachment. Built for field repairs in the harshest mining environments.</p>
+            </div>
+
+            <div class="mmp-showcase fade-up">
+                <!-- Drone Visual -->
+                <div class="drone-scene">
+                    <div class="drone-float">
+                        <!-- Rotor Back Left -->
+                        <div class="rotor rotor-bl">
+                            <div class="rotor-arm"></div>
+                            <div class="rotor-hub"></div>
+                            <div class="blade b1"></div>
+                            <div class="blade b2"></div>
+                        </div>
+                        <!-- Rotor Back Right -->
+                        <div class="rotor rotor-br">
+                            <div class="rotor-arm"></div>
+                            <div class="rotor-hub"></div>
+                            <div class="blade b1"></div>
+                            <div class="blade b2"></div>
+                        </div>
+                        <!-- Rotor Front Left -->
+                        <div class="rotor rotor-fl">
+                            <div class="rotor-arm"></div>
+                            <div class="rotor-hub"></div>
+                            <div class="blade b1"></div>
+                            <div class="blade b2"></div>
+                        </div>
+                        <!-- Rotor Front Right -->
+                        <div class="rotor rotor-fr">
+                            <div class="rotor-arm"></div>
+                            <div class="rotor-hub"></div>
+                            <div class="blade b1"></div>
+                            <div class="blade b2"></div>
+                        </div>
+
+                        <!-- Drone Body -->
+                        <div class="drone-body">
+                            <div class="drone-top"></div>
+                            <div class="drone-front"></div>
+                            <div class="drone-side-left"></div>
+                            <div class="drone-side-right"></div>
+                            <div class="drone-camera">
+                                <div class="camera-lens"></div>
+                                <div class="camera-glow"></div>
+                            </div>
+                            <div class="drone-light left"></div>
+                            <div class="drone-light right"></div>
+                        </div>
+
+                        <!-- Welder Attachment -->
+                        <div class="welder-arm">
+                            <div class="welder-joint j1"></div>
+                            <div class="welder-segment s1"></div>
+                            <div class="welder-joint j2"></div>
+                            <div class="welder-segment s2"></div>
+                            <div class="welder-nozzle">
+                                <div class="welder-tip"></div>
+                                <div class="spark spark-1"></div>
+                                <div class="spark spark-2"></div>
+                                <div class="spark spark-3"></div>
+                                <div class="spark spark-4"></div>
+                                <div class="spark spark-5"></div>
+                                <div class="welder-glow"></div>
+                            </div>
+                        </div>
+
+                        <!-- Hose Attachment -->
+                        <div class="hose-attachment">
+                            <div class="hose-reel"></div>
+                            <div class="hose-segment h1"></div>
+                            <div class="hose-segment h2"></div>
+                            <div class="hose-segment h3"></div>
+                            <div class="hose-segment h4"></div>
+                            <div class="hose-segment h5"></div>
+                            <div class="hose-connector"></div>
+                            <div class="hose-nozzle"></div>
+                        </div>
+
+                        <!-- Status Ring -->
+                        <div class="drone-ring">
+                            <div class="ring-dot"></div>
+                        </div>
+                    </div>
+
+                    <!-- Ground shadow -->
+                    <div class="drone-shadow"></div>
+                </div>
+
+                <!-- Specs Panel -->
+                <div class="mmp-specs">
+                    <div class="mmp-spec-card">
+                        <span class="mmp-spec-label">ATTACHMENT</span>
+                        <h4>WELDER / HOSE</h4>
+                        <p>MIG welder with auto-feed and 15m hydraulic hose reel for on-site repairs and pressure testing.</p>
+                    </div>
+                    <div class="mmp-spec-card">
+                        <span class="mmp-spec-label">FLIGHT TIME</span>
+                        <h4>45 MINUTES</h4>
+                        <p>Hot-swappable battery system. Swap in 30 seconds without shutting down mission control.</p>
+                    </div>
+                    <div class="mmp-spec-card">
+                        <span class="mmp-spec-label">PAYLOAD</span>
+                        <h4>8 KG</h4>
+                        <p>Carries tools, spare parts, and welding consumables directly to the breakdown point.</p>
+                    </div>
+                    <div class="mmp-spec-card">
+                        <span class="mmp-spec-label">AUTONOMY</span>
+                        <h4>WAYPOINT NAV</h4>
+                        <p>Pre-programmed flight paths. Returns to base on low battery or mission complete.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- How It Works -->
     <section id="how-it-works" class="hiw-section">

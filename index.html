@@ -1173,6 +1173,173 @@
             opacity: 1;
         }
 
+        /* ===== HOW IT WORKS ===== */
+        .hiw-section {
+            background: var(--bg-elevated);
+            padding: 6rem 3rem;
+        }
+
+        .hiw-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .hiw-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .hiw-steps {
+            display: flex;
+            gap: 2rem;
+            position: relative;
+        }
+
+        .hiw-step {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .hiw-number {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--surface);
+            line-height: 1;
+            margin-bottom: 1rem;
+            letter-spacing: -3px;
+            transition: color 0.4s;
+        }
+
+        .hiw-step:hover .hiw-number {
+            color: var(--lime);
+        }
+
+        .hiw-content {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 2rem;
+            flex-grow: 1;
+            transition: all 0.4s;
+            position: relative;
+        }
+
+        .hiw-content::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--border);
+            transition: all 0.4s;
+            border-radius: 16px 16px 0 0;
+        }
+
+        .hiw-step:hover .hiw-content::before {
+            background: var(--lime);
+            box-shadow: 0 0 20px rgba(204,255,0,0.15);
+        }
+
+        .hiw-step:hover .hiw-content {
+            border-color: var(--border-light);
+            transform: translateY(-4px);
+        }
+
+        .hiw-icon {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            line-height: 1;
+        }
+
+        .hiw-content h3 {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #fff;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .hiw-content p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .hiw-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .hiw-tags span {
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--lime);
+            background: rgba(204,255,0,0.06);
+            border: 1px solid rgba(204,255,0,0.12);
+            padding: 0.35rem 0.7rem;
+            border-radius: 4px;
+        }
+
+        .hiw-arrow {
+            position: absolute;
+            right: -1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--lime);
+            font-size: 1.5rem;
+            font-weight: 900;
+            z-index: 2;
+            background: var(--bg-elevated);
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+        }
+
+        .hiw-step:last-child .hiw-arrow {
+            display: none;
+        }
+
+        /* Flow line (mobile) */
+        .hiw-flow-line {
+            display: none;
+            justify-content: center;
+            align-items: center;
+            gap: 0;
+            margin-top: 2rem;
+        }
+
+        .hiw-flow-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            border: 2px solid var(--border-light);
+            transition: all 0.4s;
+        }
+
+        .hiw-flow-dot.active {
+            background: var(--lime);
+            border-color: var(--lime);
+            box-shadow: 0 0 10px rgba(204,255,0,0.3);
+        }
+
+        .hiw-flow-line-bar {
+            width: 60px;
+            height: 2px;
+            background: var(--border);
+        }
+
         /* ===== PRICING ===== */
         .pricing-section {
             background: var(--bg);
@@ -2295,6 +2462,75 @@
             </div>
         </section>
     </div>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="hiw-section">
+        <div class="hiw-inner">
+            <div class="hiw-header fade-up">
+                <span class="section-label">HOW IT WORKS</span>
+                <h2 class="section-title">3 STEPS TO <span class="lime">PROTECTED</span> TRADING</h2>
+                <p class="section-desc">Guard.Angel integrates directly into MetaTrader 5. Set it up once, trade with discipline forever.</p>
+            </div>
+
+            <div class="hiw-steps">
+                <!-- Step 1 -->
+                <div class="hiw-step fade-up">
+                    <div class="hiw-number">01</div>
+                    <div class="hiw-content">
+                        <div class="hiw-icon">⚙️</div>
+                        <h3>SET YOUR RISK</h3>
+                        <p>Configure your risk parameters once — 2% max per trade, 300 pip stop-loss, and your lot size auto-calculates based on account balance and SL distance.</p>
+                        <div class="hiw-tags">
+                            <span>2% RISK</span>
+                            <span>AUTO LOT</span>
+                            <span>300 PIP SL</span>
+                        </div>
+                    </div>
+                    <div class="hiw-arrow">→</div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="hiw-step fade-up">
+                    <div class="hiw-number">02</div>
+                    <div class="hiw-content">
+                        <div class="hiw-icon">🎯</div>
+                        <h3>ENTER YOUR TRADE</h3>
+                        <p>You stay in full control. Pick your entry, your direction, your timing. Guard.Angel does not take trades for you — it protects the ones you choose.</p>
+                        <div class="hiw-tags">
+                            <span>MANUAL ENTRY</span>
+                            <span>YOU DECIDE</span>
+                            <span>FULL CONTROL</span>
+                        </div>
+                    </div>
+                    <div class="hiw-arrow">→</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="hiw-step fade-up">
+                    <div class="hiw-number">03</div>
+                    <div class="hiw-content">
+                        <div class="hiw-icon">🛡️</div>
+                        <h3>LET GUARD.ANGEL PROTECT</h3>
+                        <p>From the moment you enter, Guard.Angel locks in your SL, moves to breakeven at +$20 profit, takes partial profits at TP1/TP2, and closes everything at TP3. Zero emotion. Pure discipline.</p>
+                        <div class="hiw-tags">
+                            <span>AUTO SL</span>
+                            <span>BREAKEVEN</span>
+                            <span>PARTIAL CLOSE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visual flow line -->
+            <div class="hiw-flow-line">
+                <div class="hiw-flow-dot active"></div>
+                <div class="hiw-flow-line-bar"></div>
+                <div class="hiw-flow-dot active"></div>
+                <div class="hiw-flow-line-bar"></div>
+                <div class="hiw-flow-dot active"></div>
+            </div>
+        </div>
+    </section>
 
     <!-- Pricing Section -->
     <section id="pricing" class="pricing-section">

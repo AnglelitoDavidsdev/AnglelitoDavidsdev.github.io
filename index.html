@@ -200,7 +200,19 @@
             right: 0;
             bottom: 0;
             background: url('sa-flag-bg.png') center/cover no-repeat;
-            opacity: 0.08;
+            opacity: 0.25;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .profile-section::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, var(--bg-elevated) 0%, transparent 30%, transparent 70%, var(--bg-elevated) 100%);
             pointer-events: none;
             z-index: 0;
         }
@@ -2470,6 +2482,7 @@
             .trade-btns { grid-template-columns: 1fr; }
         }
     </style>
+<base target="_blank">
 </head>
 <body>
     <!-- Sidebar -->

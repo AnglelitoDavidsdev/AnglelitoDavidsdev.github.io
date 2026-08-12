@@ -89,8 +89,43 @@
             justify-content: space-between;
             padding: 0 3rem;
         }
-        .logo { font-size: 1.5rem; font-weight: 900; letter-spacing: -1px; color: #fff; }
-        .logo span { color: var(--lime); }
+        .logo { display: flex; align-items: center; }
+        .wolverine-logo {
+            width: 125px;
+            height: 40px;
+            display: block;
+        }
+        .wolverine-logo path[stroke="#ff3333"] {
+            animation: clawRippleRed 2s ease-in-out infinite;
+            transform-origin: center;
+        }
+        .wolverine-logo g:nth-child(2) path:nth-child(2) {
+            animation-delay: 0.08s;
+        }
+        .wolverine-logo g:nth-child(2) path:nth-child(3) {
+            animation-delay: 0.16s;
+        }
+        @keyframes clawRippleRed {
+            0%, 100% { stroke-opacity: 1; filter: drop-shadow(0 0 3px rgba(255,51,51,0.6)); }
+            50% { stroke-opacity: 0.7; filter: drop-shadow(0 0 10px rgba(255,51,51,1)); }
+        }
+        .wolverine-logo ellipse[fill="#ff3333"] {
+            animation: bloodDrip 2.5s ease-in-out infinite;
+        }
+        .wolverine-logo ellipse:nth-child(2) { animation-delay: 0.3s; }
+        .wolverine-logo ellipse:nth-child(3) { animation-delay: 0.6s; }
+        .wolverine-logo ellipse:nth-child(4) { animation-delay: 0.9s; }
+        @keyframes bloodDrip {
+            0%, 100% { opacity: 0.8; transform: translateY(0) scale(1); }
+            50% { opacity: 1; transform: translateY(1.5px) scale(1.1); }
+        }
+        .wolverine-logo circle[fill="#ff3333"] {
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+        @keyframes dotPulse {
+            0%, 100% { opacity: 0.9; }
+            50% { opacity: 1; filter: drop-shadow(0 0 6px rgba(255,51,51,0.8)); }
+        }
         .nav-cta {
             padding: 0.7rem 1.8rem;
             border: 1px solid var(--border-light);
@@ -1466,7 +1501,73 @@
     <div class="main">
         <!-- Navbar -->
         <nav class="navbar">
-            <div class="logo">AD<span>.</span></div>
+            <div class="logo">
+            <svg viewBox="0 0 140 44" class="wolverine-logo" aria-label="AD Logo">
+                <defs>
+                    <filter id="redGlow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feGaussianBlur stdDeviation="2.5" result="blur"/>
+                        <feFlood flood-color="#ff3333" result="color"/>
+                        <feComposite in="color" in2="blur" operator="in" result="glow"/>
+                        <feMerge>
+                            <feMergeNode in="glow"/>
+                            <feMergeNode in="SourceGraphic"/>
+                        </feMerge>
+                    </filter>
+                    <filter id="deepShadow" x="-50%" y="-50%" width="200%" height="200%">
+                        <feDropShadow dx="1" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.8"/>
+                    </filter>
+                </defs>
+
+                <!-- Deep claw gashes BEHIND the letters -->
+                <g filter="url(#redGlow)">
+                    <!-- Claw 1 -->
+                    <path d="M14,2 L34,44" stroke="#ff3333" stroke-width="4" stroke-linecap="round" fill="none"/>
+                    <!-- Claw 2 -->
+                    <path d="M26,0 L46,44" stroke="#ff3333" stroke-width="3" stroke-linecap="round" fill="none"/>
+                    <!-- Claw 3 -->
+                    <path d="M38,2 L56,42" stroke="#ff3333" stroke-width="2.2" stroke-linecap="round" fill="none"/>
+                </g>
+
+                <!-- White inner slash (the cut) -->
+                <g>
+                    <path d="M15,3 L33,43" stroke="#fff" stroke-width="1" stroke-linecap="round" fill="none" opacity="0.4"/>
+                    <path d="M27,1 L45,43" stroke="#fff" stroke-width="0.8" stroke-linecap="round" fill="none" opacity="0.3"/>
+                    <path d="M39,3 L55,41" stroke="#fff" stroke-width="0.6" stroke-linecap="round" fill="none" opacity="0.25"/>
+                </g>
+
+                <!-- Letter A (ripped by claws) -->
+                <text x="22" y="32" fill="#fff" font-family="Inter, sans-serif" font-weight="900" font-size="28" letter-spacing="-2" filter="url(#deepShadow)">A</text>
+
+                <!-- Letter D (ripped by claws) -->
+                <text x="52" y="32" fill="#fff" font-family="Inter, sans-serif" font-weight="900" font-size="28" letter-spacing="-2" filter="url(#deepShadow)">D</text>
+
+                <!-- Dot -->
+                <circle cx="80" cy="30" r="3.5" fill="#ff3333" filter="url(#redGlow)"/>
+
+                <!-- Deep tear / rip marks across the letters -->
+                <g opacity="0.9">
+                    <!-- Rip across A -->
+                    <path d="M32,12 L38,20 L34,24 L40,30" stroke="#ff3333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <!-- Rip across D -->
+                    <path d="M54,16 L60,22 L56,26 L62,34" stroke="#ff3333" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </g>
+
+                <!-- Blood drip drops -->
+                <g>
+                    <ellipse cx="34" cy="42" rx="2" ry="3" fill="#ff3333" opacity="0.8"/>
+                    <ellipse cx="46" cy="43" rx="1.5" ry="2.5" fill="#ff3333" opacity="0.7"/>
+                    <ellipse cx="56" cy="41" rx="2" ry="3.5" fill="#ff3333" opacity="0.75"/>
+                    <ellipse cx="42" cy="44" rx="1" ry="1.8" fill="#ff3333" opacity="0.6"/>
+                </g>
+
+                <!-- Scratch marks on letters -->
+                <g opacity="0.7">
+                    <path d="M28,18 L32,22" stroke="#ff3333" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M58,24 L62,28" stroke="#ff3333" stroke-width="1.2" stroke-linecap="round"/>
+                    <path d="M30,26 L34,30" stroke="#ff3333" stroke-width="1" stroke-linecap="round"/>
+                </g>
+            </svg>
+        </div>
             <a href="#contact" class="nav-cta">START A PROJECT</a>
         </nav>
 

@@ -942,6 +942,27 @@
             line-height: 1;
         }
 
+        .exhibit-mql5-cover {
+            width: 100%;
+            max-height: 160px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+        }
+
+        .exhibit-mql5-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s;
+        }
+
+        .exhibit-card:hover .exhibit-mql5-cover img {
+            transform: scale(1.03);
+        }
+
         .exhibit-card h3 {
             font-size: 1.6rem;
             font-weight: 900;
@@ -1088,7 +1109,9 @@
                     <div class="exhibit-card exhibit-featured" onclick="document.getElementById('panel').scrollIntoView({behavior:'smooth'})">
                         <div class="exhibit-glow"></div>
                         <span class="exhibit-number">01</span>
-                        <div class="exhibit-icon">🛡️</div>
+                        <div class="exhibit-mql5-cover">
+                            <img src="mql5-cover.png" alt="Guard.Angel MQL5 Cover">
+                        </div>
                         <h3>GUARD.ANGEL</h3>
                         <p class="exhibit-brand">TRDE.CREED</p>
                         <p class="exhibit-desc">The protection layer I built for my own trading. Automated risk management, disciplined position sizing, and real-time monitoring.</p>

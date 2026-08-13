@@ -2,281 +2,157 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Angelito Davids | MODKRAFT — Guard.Angel, MODMINER & STM</title>
+<meta name="description" content="Angelito Davids — MODKRAFT engineering, Guard.Angel trading protection and MODMINER modular mining systems.">
+<meta name="keywords" content="Angelito Davids, MODKRAFT, Guard.Angel, MODMINER, STM, Smart Trade Manager, MQL5">
+<meta name="author" content="Angelito Davids">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://angelitodavidsdev.github.io/">
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: #0a0a0a;
-    color: #ddd;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    padding: 40px 20px;
-  }
-  a.card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: #111;
-    border: 1px solid #222;
-    border-radius: 16px;
-    padding: 32px;
-    max-width: 420px;
-    width: 100%;
-    transition: border-color 0.2s, transform 0.2s;
-    cursor: pointer;
-  }
-  a.card:hover {
-    border-color: #ccff00;
-    transform: translateY(-4px);
-  }
-  .number {
-    color: #555;
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-  }
-  .logo-wrap {
-    width: 100px;
-    height: 100px;
-    border: 2px solid #ccff00;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    position: relative;
-  }
-  .logo-wrap::before {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 80px;
-    border: 1px solid rgba(204,255,0,0.3);
-    border-radius: 50%;
-  }
-  .logo-wrap::after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    border: 1px solid rgba(204,255,0,0.15);
-    border-radius: 50%;
-  }
-  .logo-m {
-    color: #ccff00;
-    font-size: 2.5rem;
-    font-weight: 900;
-    font-family: Impact, 'Arial Black', sans-serif;
-    z-index: 1;
-  }
-  h1 {
-    font-family: Impact, 'Arial Black', sans-serif;
-    font-size: 2.2rem;
-    color: #fff;
-    letter-spacing: 1px;
-    margin-bottom: 6px;
-  }
-  .brand {
-    color: #ccff00;
-    font-size: 0.85rem;
-    font-weight: 700;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    margin-bottom: 16px;
-  }
-  p {
-    color: #888;
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-  .tags {
-    display: flex;
-    gap: 10px;
-  }
-  .tag {
-    border: 1px solid #333;
-    color: #777;
-    padding: 5px 14px;
-    border-radius: 4px;
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    font-weight: 600;
-  }
+:root{
+  --bg:#050706;--panel:#080b09;--line:#1c251f;--muted:#7f8982;
+  --text:#f4f6f2;--lime:#caff16;--lime2:#a9d800;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+header{height:74px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5.2%;position:sticky;top:0;background:rgba(5,7,6,.94);backdrop-filter:blur(12px);z-index:20}
+.logo{font-weight:900;font-size:25px;letter-spacing:-1.5px}.logo span{color:var(--lime)}
+nav{display:flex;gap:36px;font-size:12px;letter-spacing:2px;color:#929b94;text-transform:uppercase}
+nav a:hover{color:var(--lime)}
+.cta{border:1px solid #39433c;padding:13px 20px;font-size:12px;font-weight:800;letter-spacing:1px}
+.cta:hover{background:var(--lime);color:#050706;border-color:var(--lime)}
+.hero{min-height:calc(100vh - 74px);display:grid;grid-template-columns:45% 55%;border-bottom:1px solid var(--line)}
+.hero-copy{padding:10.5vh 8%;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line)}
+.eyebrow{font-size:10px;letter-spacing:4px;color:var(--lime);font-weight:700;margin-bottom:22px}
+h1{font-size:clamp(64px,8vw,116px);line-height:.78;margin:0 0 30px;letter-spacing:-6px;font-weight:900}
+h1 .green{color:var(--lime)}
+.tag{font-size:21px;line-height:1.1;max-width:420px;text-transform:uppercase;margin-bottom:26px}
+.copy{color:var(--muted);font-size:15px;line-height:1.9;max-width:480px}
+.actions{display:flex;gap:12px;margin-top:34px}
+.btn{padding:17px 23px;font-size:12px;font-weight:900;letter-spacing:1px;border:1px solid #344039}
+.btn.primary{background:var(--lime);color:#050706;border-color:var(--lime)}
+.btn.secondary:hover{border-color:var(--lime);color:var(--lime)}
+.hero-visual{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;
+background:
+linear-gradient(rgba(202,255,22,.035) 1px,transparent 1px),
+linear-gradient(90deg,rgba(202,255,22,.035) 1px,transparent 1px);
+background-size:42px 42px}
+.hero-visual:before,.hero-visual:after{content:"";position:absolute;border:1px solid rgba(202,255,22,.16);border-radius:50%;width:min(72vw,620px);height:min(72vw,620px)}
+.hero-visual:after{width:min(54vw,460px);height:min(54vw,460px);border-color:rgba(202,255,22,.10)}
+.visual-card{position:relative;width:min(78%,760px);z-index:2}
+.visual-card img{display:block;width:100%;height:auto;object-fit:contain;filter:drop-shadow(0 20px 60px rgba(0,0,0,.55))}
+.grid-section{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.section-copy{padding:90px 8%;border-right:1px solid var(--line)}
+.section-visual{padding:70px 6%;display:flex;align-items:center;justify-content:center;background:#060906}
+.kicker{font-size:10px;letter-spacing:4px;color:var(--lime);font-weight:700;margin-bottom:20px}
+h2{font-size:54px;line-height:.92;letter-spacing:-3px;margin:0 0 24px}
+.section-copy p{color:var(--muted);line-height:1.8;max-width:560px}
+.specs{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:35px}
+.spec{border:1px solid var(--line);padding:22px;background:#070a08}
+.spec b{display:block;font-size:12px;letter-spacing:2px;margin-bottom:8px}.spec span{font-size:13px;color:var(--muted)}
+.product-img{width:100%;max-width:720px;border:1px solid #202a22;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+
+.cad-section{padding:100px 5.2%;border-bottom:1px solid var(--line);background:#060806}.cad-head{display:flex;justify-content:space-between;gap:50px;align-items:end;margin-bottom:42px}.cad-head h2{margin-bottom:0}.cad-intro{max-width:430px;color:var(--muted);line-height:1.8;font-size:14px}.cad-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.cad-card{position:relative;min-height:330px;border:1px solid var(--line);overflow:hidden;background:#080b09}.cad-card:hover{border-color:#59694e}.cad-card:before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(202,255,22,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(202,255,22,.035) 1px,transparent 1px);background-size:28px 28px;opacity:.7}.cad-visual{height:205px;position:relative;display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--line)}.cad-shape{width:150px;height:92px;border:2px solid #71806e;transform:skew(-12deg) rotate(-8deg);position:relative;box-shadow:18px 18px 0 rgba(202,255,22,.08)}.cad-shape:before,.cad-shape:after{content:"";position:absolute;border:1px solid var(--lime);opacity:.55}.cad-shape:before{width:55px;height:55px;left:28px;top:17px;border-radius:50%}.cad-shape:after{width:35px;height:12px;right:-20px;bottom:-18px}.cad-info{position:relative;padding:22px}.cad-num{color:var(--lime);font-size:9px;letter-spacing:3px;font-weight:700}.cad-info h3{font-size:22px;margin:12px 0 8px;letter-spacing:-1px}.cad-info p{margin:0;color:var(--muted);font-size:13px;line-height:1.6}.cad-tools{margin-top:42px;display:flex;flex-wrap:wrap;gap:8px}.cad-tool{border:1px solid var(--line);padding:12px 16px;color:#9aa49c;font-size:10px;letter-spacing:2px}@media(max-width:850px){.cad-head{display:block}.cad-intro{margin-top:20px}.cad-grid{grid-template-columns:1fr}.cad-card{min-height:300px}}
+
+.products{padding:100px 5.2%;border-bottom:1px solid var(--line)}
+.products-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:40px}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.product{border:1px solid var(--line);padding:28px;min-height:270px;background:#070a08}
+.product:hover{border-color:#465340}
+.product .num{color:var(--lime);font-size:10px;letter-spacing:3px}
+.product h3{font-size:27px;margin:45px 0 14px}
+.product p{color:var(--muted);line-height:1.7;font-size:14px}
+footer{padding:40px 5.2%;display:flex;justify-content:space-between;color:#68736b;font-size:11px;letter-spacing:1px}
+@media(max-width:850px){
+ header{height:64px;padding:0 5%} nav{display:none}.cta{padding:10px 13px}
+ .hero,.grid-section{grid-template-columns:1fr}.hero-copy{border-right:0;padding:70px 7%}.hero-visual{min-height:58vh}
+ h1{font-size:72px}.tag{font-size:18px}.section-copy{border-right:0;padding:70px 7%}.section-visual{padding:45px 7%}
+ .products{padding:70px 5%}.products-grid{grid-template-columns:1fr}.products-head{display:block}
+ footer{display:block}.footer-right{margin-top:12px}
+}
 </style>
 </head>
 <body>
+<header>
+  <a class="logo" href="#top">AD<span>.</span></a>
+  <nav>
+    <a href="#modminer">MODMINER</a><a href="#systems">SYSTEMS</a><a href="#specs">SPECS</a>
+    <a href="#products">PRODUCTS</a><a href="#cad">CAD</a><a href="#about">ABOUT</a><a href="#contact">CONTACT</a>
+  </nav>
+  <a class="cta" href="mailto:contact@angelitodavids.com">START A PROJECT</a>
+</header>
 
-<a href="saber/index.html" class="card">
-  <div class="number">02</div>
-  <div class="logo-wrap">
-    <span class="logo-m">M</span>
+<main id="top">
+<section class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">TRDERCREED / FLAGSHIP PRODUCT</div>
+    <h1>GUARD.<br><span class="green">ANGEL.</span></h1>
+    <div class="tag">THE PROTECTION LAYER FOR YOUR TRADING SYSTEM.</div>
+    <p class="copy">Guard.Angel is the flagship trading product presented by TRDERCREED — built around disciplined trade management, protection logic and controlled execution. MODKRAFT brings the same engineering mindset to machines, systems and intelligent products.</p>
+    <div class="actions">
+      <a class="btn primary" href="#guardangel">EXPLORE GUARD.ANGEL →</a>
+      <a class="btn secondary" href="#modminer">MEET MODMINER ↓</a>
+    </div>
   </div>
-  <h1>MODMINER</h1>
-  <div class="brand">MODKRAFT</div>
-  <p>Heavy-duty tracked mining platform engineered around modularity, material handling, and field serviceability.</p>
-  <div class="tags">
-    <span class="tag">Modular</span>
-    <span class="tag">Heavy Duty</span>
+  <div class="hero-visual" id="guardangel">
+    <div class="visual-card">
+      <img src="assets/mql5-stm-cover.png" alt="Guard.Angel and Smart Trade Manager for MetaTrader 5"
+           onerror="this.onerror=null;this.src='assets/STM%20Smart%20Trade%20Manager%20Poster.png'">
+    </div>
   </div>
-</a>
+</section>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SABER / ModMiner — 3D</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    background: #08080d;
-    color: #ddd;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    overflow: hidden;
-  }
-  #viewer-wrap {
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-  }
-  #viewer-label {
-    position: absolute;
-    top: 16px;
-    left: 20px;
-    z-index: 10;
-    pointer-events: none;
-  }
-  #viewer-label h1 {
-    font-size: 1.4rem;
-    color: #00d4ff;
-    margin-bottom: 4px;
-  }
-  #viewer-label p {
-    font-size: 0.8rem;
-    color: #888;
-  }
-  #back-btn {
-    position: absolute;
-    top: 16px;
-    right: 20px;
-    z-index: 10;
-    background: transparent;
-    border: 1px solid #333;
-    color: #888;
-    padding: 8px 16px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-size: 0.8rem;
-    transition: all 0.2s;
-  }
-  #back-btn:hover {
-    border-color: #ccff00;
-    color: #ccff00;
-  }
-  canvas { display: block; width: 100% !important; height: 100% !important; }
-</style>
-</head>
-<body>
-
-<div id="viewer-wrap">
-  <div id="viewer-label">
-    <h1>SABER / ModMiner</h1>
-    <p>Drag to rotate &middot; Scroll to zoom &middot; Right-click to pan</p>
+<section class="grid-section" id="modminer">
+  <div class="section-copy">
+    <div class="kicker">001 / MODULAR MINING PLATFORM</div>
+    <h2>MOD<span style="color:var(--lime)">MINER.</span></h2>
+    <p>A heavy-duty tracked mining platform by MODKRAFT, engineered around modularity, material handling and serviceability.</p>
+    <div class="actions"><a class="btn primary" href="#specs">VIEW SPECS →</a><a class="btn secondary" href="#products">GALLERY</a></div>
+    <div class="specs" id="specs">
+      <div class="spec"><b>MODULAR</b><span>Configurable platform architecture.</span></div>
+      <div class="spec"><b>HEAVY DUTY</b><span>Designed around demanding environments.</span></div>
+      <div class="spec"><b>SERVICEABLE</b><span>Access and replaceability built in.</span></div>
+      <div class="spec"><b>ENGINEERED</b><span>Machines built with purpose.</span></div>
+    </div>
   </div>
-  <a href="../index.html" id="back-btn">&larr; Back</a>
-</div>
+  <div class="section-visual">
+    <div style="width:100%;max-width:700px;aspect-ratio:1.35;border:1px solid #1c251f;display:grid;place-items:center;background:
+      linear-gradient(rgba(202,255,22,.035) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(202,255,22,.035) 1px,transparent 1px);background-size:36px 36px;">
+      <div style="text-align:center;color:#3d493f;letter-spacing:5px;font-size:12px">MODKRAFT / MODMINER<br><span style="color:#788276">ENGINEERING PLATFORM</span></div>
+    </div>
+  </div>
+</section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/OBJLoader.js"></script>
 
-<script>
-  const container = document.getElementById('viewer-wrap');
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x08080d);
-  scene.fog = new THREE.Fog(0x08080d, 8000, 35000);
+<section class="cad-section" id="cad">
+  <div class="cad-head"><div><div class="kicker">004 / DIGITAL ENGINEERING</div><h2>CAD.<br><span style="color:var(--lime)">BUILT.</span></h2></div><p class="cad-intro">A dedicated engineering workspace for MODKRAFT concepts — from machine components and mining platforms to custom mechanisms, enclosures and production-ready designs.</p></div>
+  <div class="cad-grid">
+    <article class="cad-card"><div class="cad-visual"><div class="cad-shape"></div></div><div class="cad-info"><div class="cad-num">CAD / 01</div><h3>MODULAR MACHINES</h3><p>Tracked platforms, attachments and modular mechanical systems designed around serviceability.</p></div></article>
+    <article class="cad-card"><div class="cad-visual"><div class="cad-shape" style="transform:scale(.8) skew(10deg) rotate(12deg);border-radius:12px"></div></div><div class="cad-info"><div class="cad-num">CAD / 02</div><h3>COMPONENT DESIGN</h3><p>Brackets, housings, mechanisms and custom parts developed for practical fabrication.</p></div></article>
+    <article class="cad-card"><div class="cad-visual"><div class="cad-shape" style="width:120px;height:120px;border-radius:50%;transform:none"></div></div><div class="cad-info"><div class="cad-num">CAD / 03</div><h3>PROTOTYPE → BUILD</h3><p>Concepts can move from digital model to prototype, fabrication and field testing.</p></div></article>
+  </div>
+  <div class="cad-tools"><div class="cad-tool">FREECAD</div><div class="cad-tool">BLENDER</div><div class="cad-tool">3D MODELLING</div><div class="cad-tool">MECHANICAL DESIGN</div><div class="cad-tool">PROTOTYPING</div></div>
+</section>
 
-  const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 1, 50000);
-  camera.position.set(9000, 7000, 9000);
+<section class="products" id="products">
+  <div class="products-head">
+    <div><div class="kicker">PRODUCT SYSTEMS</div><h2>BUILT TO<br><span style="color:var(--lime)">PROTECT.</span></h2></div>
+    <p class="copy" style="max-width:360px">A growing portfolio spanning trading technology, heavy equipment and intelligent engineering products.</p>
+  </div>
+  <div class="products-grid">
+    <a class="product" href="#guardangel"><div class="num">01 / TRDERCREED</div><h3>GUARD.ANGEL</h3><p>Manual trading control with automated protection and disciplined position management.</p></a>
+    <a class="product" href="#modminer"><div class="num">02 / MODKRAFT</div><h3>MODMINER</h3><p>Modular tracked mining equipment designed for material handling and field serviceability.</p></a>
+    <div class="product"><div class="num">03 / STM</div><h3>SMART TRADE MANAGER</h3><p>MetaTrader 5 trade-management technology powering the Guard.Angel protection layer.</p></div>
+  </div>
+</section>
+</main>
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true });
-  renderer.setSize(container.clientWidth, container.clientHeight);
-  renderer.shadowMap.enabled = true;
-  container.appendChild(renderer.domElement);
-
-  const controls = new THREE.OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.05;
-  controls.target.set(0, 1500, 0);
-  controls.maxDistance = 30000;
-
-  scene.add(new THREE.AmbientLight(0xffffff, 0.45));
-
-  const dir = new THREE.DirectionalLight(0xffffff, 0.9);
-  dir.position.set(6000, 12000, 6000);
-  dir.castShadow = true;
-  scene.add(dir);
-
-  const fill = new THREE.DirectionalLight(0x00d4ff, 0.25);
-  fill.position.set(-6000, 4000, -6000);
-  scene.add(fill);
-
-  const grid = new THREE.GridHelper(30000, 30, 0x222233, 0x0e0e18);
-  scene.add(grid);
-
-  const loader = new THREE.OBJLoader();
-  loader.load(
-    'Saber_ModMiner.obj',
-    function (object) {
-      const box = new THREE.Box3().setFromObject(object);
-      const center = box.getCenter(new THREE.Vector3());
-      object.position.sub(center);
-      object.position.y += 500;
-
-      object.traverse(function (child) {
-        if (child.isMesh) {
-          child.castShadow = true;
-          child.receiveShadow = true;
-          if (!child.material) {
-            child.material = new THREE.MeshStandardMaterial({ color: 0x888899 });
-          }
-        }
-      });
-
-      scene.add(object);
-      const size = box.getSize(new THREE.Vector3());
-      controls.maxDistance = Math.max(size.x, size.y, size.z) * 4;
-    },
-    undefined,
-    function () {
-      const geo = new THREE.BoxGeometry(2000, 2000, 2000);
-      const mat = new THREE.MeshStandardMaterial({ color: 0xe94560, wireframe: true });
-      const cube = new THREE.Mesh(geo, mat);
-      cube.position.y = 1000;
-      scene.add(cube);
-    }
-  );
-
-  window.addEventListener('resize', () => {
-    camera.aspect = container.clientWidth / container.clientHeight;
-    camera.updateProjectionMatrix();
-    renderer.setSize(container.clientWidth, container.clientHeight);
-  });
-
-  function animate() {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-  }
-  animate();
-</script>
-
+<footer id="contact">
+  <div>© 2026 ANGELITO DAVIDS / MODKRAFT</div>
+  <div class="footer-right">TRDERCREED · MODKRAFT · GUARD.ANGEL · MODMINER</div>
+</footer>
 </body>
 </html>

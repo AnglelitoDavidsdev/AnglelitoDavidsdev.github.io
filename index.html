@@ -1,175 +1,2732 @@
-<!-- CAD PROJECTS -->
-<section id="cad-projects" class="cad-projects-current">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angelito Davids — Engineering • Systems • Innovation</title>
 
-  <div class="cad-projects-current-inner">
+    <style>
+        :root {
+            --black: #050505;
+            --panel: #0b0b0b;
+            --panel2: #101010;
+            --lime: #b7d600;
+            --lime2: #d4f000;
+            --text: #f2f2f2;
+            --text-dim: #8b8b8b;
+            --line: #242424;
+            --green: #25d366;
+            --red: #ff3b30;
+        }
 
-    <div class="cad-projects-current-header">
-      <div>
-        <span class="section-label">003 / CAD PORTFOLIO</span>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-        <h2 class="section-title">
-          CAD <span class="lime">PROJECTS.</span>
-        </h2>
-      </div>
+        html {
+            scroll-behavior: smooth;
+        }
 
-      <p class="section-desc">
-        Selected MODKRAFT engineering concepts, mechanical designs
-        and digital builds — developed from idea to model and
-        toward fabrication.
-      </p>
-    </div>
+        body {
+            background: var(--black);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+            overflow-x: hidden;
+        }
 
-    <div class="cad-projects-current-grid">
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
 
-      <!-- MODMINER PRO -->
-      <article class="cad-project-current cad-project-current-large">
+        button {
+            font: inherit;
+        }
 
-        <div class="cad-project-current-art">
-          <span>FLAGSHIP / 001</span>
-          <b>MODKRAFT / MMP-01</b>
+        /* ===== SIDEBAR ===== */
 
-          <div class="cad-wireframe large"></div>
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 250px;
+            height: 100vh;
+            background: #090909;
+            border-right: 1px solid var(--line);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            padding: 28px 22px;
+        }
+
+        .logo {
+            font-size: 34px;
+            font-weight: 900;
+            letter-spacing: -3px;
+            margin-bottom: 55px;
+        }
+
+        .logo span {
+            color: var(--lime);
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 7px;
+        }
+
+        .nav a {
+            color: #888;
+            padding: 12px 10px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            transition: .2s;
+        }
+
+        .nav a:hover,
+        .nav a.active {
+            color: var(--lime);
+            background: rgba(183,214,0,.05);
+        }
+
+        .sidebar-bottom {
+            margin-top: auto;
+            color: #555;
+            font-family: monospace;
+            font-size: 9px;
+            line-height: 1.7;
+        }
+
+        /* ===== MAIN ===== */
+
+        main {
+            margin-left: 250px;
+        }
+
+        section {
+            position: relative;
+        }
+
+        .section-inner {
+            max-width: 1250px;
+            margin: auto;
+            padding: 110px 55px;
+        }
+
+        .section-label {
+            color: var(--lime);
+            font-family: monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 18px;
+        }
+
+        .section-title {
+            font-size: clamp(50px, 7vw, 100px);
+            line-height: .86;
+            letter-spacing: -6px;
+            font-weight: 900;
+            margin-bottom: 28px;
+        }
+
+        .section-desc {
+            color: var(--text-dim);
+            max-width: 600px;
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .lime {
+            color: var(--lime);
+        }
+
+        /* ===== HERO ===== */
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+            background:
+                radial-gradient(circle at 80% 35%, rgba(183,214,0,.08), transparent 28%),
+                #050505;
+        }
+
+        .hero-inner {
+            width: 100%;
+            max-width: 1250px;
+            margin: auto;
+            padding: 100px 55px;
+        }
+
+        .hero-kicker {
+            font-family: monospace;
+            color: var(--lime);
+            font-size: 11px;
+            letter-spacing: 4px;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(65px, 10vw, 145px);
+            line-height: .78;
+            letter-spacing: -9px;
+            max-width: 1000px;
+            margin-bottom: 35px;
+        }
+
+        .hero-sub {
+            max-width: 620px;
+            color: #969696;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 20px;
+            border: 1px solid var(--line);
+            font-family: monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            transition: .2s;
+        }
+
+        .btn:hover {
+            border-color: var(--lime);
+            color: var(--lime);
+        }
+
+        .btn-lime {
+            background: var(--lime);
+            color: #080808;
+            border-color: var(--lime);
+            font-weight: 800;
+        }
+
+        .btn-lime:hover {
+            background: var(--lime2);
+            color: #000;
+        }
+
+        /* ===== ABOUT ===== */
+
+        .about-section {
+            background: #080808;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .about-text {
+            color: #999;
+            line-height: 1.9;
+            font-size: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        .stat {
+            border: 1px solid var(--line);
+            padding: 28px;
+            background: #0c0c0c;
+        }
+
+        .stat strong {
+            display: block;
+            color: var(--lime);
+            font-size: 36px;
+            margin-bottom: 7px;
+        }
+
+        .stat span {
+            color: #777;
+            font-family: monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        /* ===== PRODUCTS ===== */
+
+        .products-section {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-top: 55px;
+        }
+
+        .product-card {
+            border: 1px solid var(--line);
+            background: var(--panel);
+            padding: 35px;
+            min-height: 310px;
+            transition: .25s;
+        }
+
+        .product-card:hover {
+            border-color: #555;
+            transform: translateY(-4px);
+        }
+
+        .product-number {
+            color: #555;
+            font-family: monospace;
+            font-size: 10px;
+            letter-spacing: 2px;
+            margin-bottom: 55px;
+        }
+
+        .product-card h3 {
+            font-size: 31px;
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .product-card p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .product-tags {
+            display: flex;
+            gap: 7px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .product-tags span {
+            border: 1px solid #333;
+            color: #777;
+            padding: 7px 9px;
+            font-family: monospace;
+            font-size: 8px;
+            letter-spacing: 1px;
+        }
+
+        /* ===== GUARD ANGEL ===== */
+
+        .guard-section {
+            background:
+                radial-gradient(circle at 80% 20%, rgba(183,214,0,.06), transparent 25%),
+                #060606;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .guard-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .guard-logo {
+            font-size: clamp(55px, 8vw, 100px);
+            font-weight: 900;
+            letter-spacing: -6px;
+            margin-bottom: 20px;
+        }
+
+        .guard-logo span {
+            color: var(--lime);
+        }
+
+        .guard-copy {
+            color: #888;
+            line-height: 1.8;
+            max-width: 520px;
+        }
+
+        .guard-terminal {
+            background: #020202;
+            border: 1px solid #2b2b2b;
+            padding: 25px;
+            box-shadow: 0 30px 80px rgba(0,0,0,.5);
+        }
+
+        .terminal-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 22px;
+        }
+
+        .terminal-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #333;
+        }
+
+        .terminal-line {
+            font-family: monospace;
+            color: #666;
+            font-size: 11px;
+            line-height: 2;
+        }
+
+        .terminal-line .green {
+            color: var(--green);
+        }
+
+        .terminal-line .lime {
+            color: var(--lime);
+        }
+
+        /* ===== HOW IT WORKS ===== */
+
+        .hiw-section {
+            background: #080808;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .hiw-steps {
+            margin-top: 60px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .hiw-step {
+            display: grid;
+            grid-template-columns: 80px 1fr 80px;
+            gap: 25px;
+            align-items: center;
+            padding: 30px;
+            border: 1px solid var(--line);
+            background: #0c0c0c;
+        }
+
+        .hiw-number {
+            color: var(--lime);
+            font-family: monospace;
+            font-size: 13px;
+        }
+
+        .hiw-content h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .hiw-content p {
+            color: #777;
+            font-size: 13px;
+            line-height: 1.7;
+            max-width: 800px;
+        }
+
+        .hiw-icon {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .hiw-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 15px;
+        }
+
+        .hiw-tags span {
+            color: #666;
+            border: 1px solid #292929;
+            padding: 6px 8px;
+            font-family: monospace;
+            font-size: 8px;
+        }
+
+        .hiw-arrow {
+            color: var(--lime);
+            font-size: 24px;
+            text-align: right;
+        }
+
+        .hiw-flow-line {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 35px;
+        }
+
+        .hiw-flow-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--lime);
+        }
+
+        .hiw-flow-line-bar {
+            height: 1px;
+            width: 100px;
+            background: #303030;
+        }
+
+        /* ===== PRICING ===== */
+
+        .pricing-section {
+            border-bottom: 1px solid var(--line);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 55px;
+            max-width: 850px;
+        }
+
+        .pricing-card {
+            position: relative;
+            border: 1px solid var(--line);
+            padding: 35px;
+            background: #090909;
+        }
+
+        .pricing-popular {
+            border-color: var(--lime);
+        }
+
+        .pricing-popular-tag {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            color: #080808;
+            background: var(--lime);
+            padding: 6px 9px;
+            font-family: monospace;
+            font-size: 8px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .pricing-badge {
+            color: #666;
+            font-family: monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+        }
+
+        .pricing-price {
+            margin: 30px 0 15px;
+        }
+
+        .currency {
+            font-size: 20px;
+            vertical-align: top;
+            color: #888;
+        }
+
+        .amount {
+            font-size: 65px;
+            font-weight: 900;
+            letter-spacing: -5px;
+        }
+
+        .period {
+            color: #666;
+            font-size: 11px;
+        }
+
+        .pricing-desc {
+            color: #777;
+            line-height: 1.6;
+            font-size: 13px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .pricing-features li {
+            color: #aaa;
+            padding: 9px 0;
+            font-size: 12px;
+            border-bottom: 1px solid #181818;
+        }
+
+        .pricing-features .strike {
+            color: #555;
+        }
+
+        .pricing-btn {
+            display: block;
+            text-align: center;
+            padding: 14px;
+            font-family: monospace;
+            font-size: 9px;
+            letter-spacing: 1.5px;
+            border: 1px solid var(--line);
+        }
+
+        .pricing-guarantee {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #666;
+            font-size: 11px;
+            max-width: 750px;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #030303;
+        }
+
+        .footer-inner {
+            max-width: 1250px;
+            margin: auto;
+            padding: 70px 55px 35px;
+        }
+
+        .footer-logo {
+            font-size: 45px;
+            font-weight: 900;
+            letter-spacing: -4px;
+        }
+
+        .footer-logo span {
+            color: var(--lime);
+        }
+
+        .footer-tagline {
+            margin-top: 12px;
+            color: #666;
+            font-size: 12px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 25px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-links a {
+            color: #777;
+            font-family: monospace;
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .footer-links a:hover {
+            color: var(--lime);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #181818;
+            margin-top: 55px;
+            padding-top: 20px;
+            color: #444;
+            font-family: monospace;
+            font-size: 9px;
+        }        /* ===== RESPONSIVE ===== */
+
+        @media (max-width: 1000px) {
+
+            .sidebar {
+                width: 210px;
+            }
+
+            main {
+                margin-left: 210px;
+            }
+
+            .section-inner,
+            .hero-inner,
+            .footer-inner {
+                padding-left: 35px;
+                padding-right: 35px;
+            }
+
+            .about-grid,
+            .guard-layout {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+
+            .products-grid,
+            .pricing-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media (max-width: 760px) {
+
+            .sidebar {
+                position: relative;
+                width: 100%;
+                height: auto;
+                border-right: none;
+                border-bottom: 1px solid var(--line);
+                padding: 20px;
+            }
+
+            .logo {
+                margin-bottom: 20px;
+            }
+
+            .nav {
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            .nav a {
+                padding: 8px;
+            }
+
+            .sidebar-bottom {
+                display: none;
+            }
+
+            main {
+                margin-left: 0;
+            }
+
+            .hero-inner {
+                padding-top: 80px;
+                padding-bottom: 80px;
+            }
+
+            .hero h1 {
+                font-size: clamp(55px, 17vw, 90px);
+                letter-spacing: -6px;
+            }
+
+            .section-inner {
+                padding-top: 75px;
+                padding-bottom: 75px;
+            }
+
+            .section-title {
+                letter-spacing: -4px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hiw-step {
+                grid-template-columns: 45px 1fr;
+            }
+
+            .hiw-arrow {
+                display: none;
+            }
+
+            .pricing-grid {
+                max-width: none;
+            }
+        }
+
+
+        @media (max-width: 520px) {
+
+            .hero-inner,
+            .section-inner,
+            .footer-inner {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .product-card {
+                padding: 25px;
+            }
+
+            .pricing-card {
+                padding: 25px;
+            }
+
+            .amount {
+                font-size: 55px;
+            }
+
+            .hiw-step {
+                padding: 22px;
+            }
+        }
+
+
+        /* ==========================================================
+           CAD PROJECTS — WHITE BACKGROUND
+           ========================================================== */
+
+        .cad-projects-current {
+            background: #ffffff !important;
+            color: #111111 !important;
+            padding: 100px 5.2%;
+            border-top: 1px solid #dddddd;
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .cad-projects-current-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cad-projects-current-header {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: end;
+            margin-bottom: 44px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #d8d8d3;
+        }
+
+        .cad-projects-current .section-label {
+            display: block;
+            color: #596500;
+            font-family: monospace;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 16px;
+        }
+
+        .cad-projects-current .section-title {
+            margin: 0;
+            color: #111111;
+            font-size: clamp(50px, 7vw, 92px);
+            line-height: .84;
+            letter-spacing: -5px;
+            font-weight: 900;
+        }
+
+        .cad-projects-current .lime {
+            color: #94b400;
+        }
+
+        .cad-projects-current .section-desc {
+            margin: 0;
+            color: #555555;
+            line-height: 1.8;
+            font-size: 14px;
+            max-width: 470px;
+        }
+
+        .cad-projects-current-grid {
+            display: grid;
+            grid-template-columns: 1.5fr .75fr .75fr;
+            gap: 14px;
+        }
+
+        .cad-project-current {
+            background: #f3f3f0;
+            border: 1px solid #d0d0ca;
+            min-height: 390px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: .2s;
+        }
+
+        .cad-project-current:hover {
+            transform: translateY(-3px);
+            border-color: #999999;
+        }
+
+        .cad-project-current-large {
+            grid-row: span 2;
+            min-height: 794px;
+        }
+
+        .cad-project-current-art {
+            position: relative;
+            flex: 1;
+            min-height: 230px;
+
+            background:
+                linear-gradient(
+                    rgba(0,0,0,.055) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.055) 1px,
+                    transparent 1px
+                );
+
+            background-size: 28px 28px;
+        }
+
+        .cad-project-current-large
+        .cad-project-current-art {
+            min-height: 590px;
+        }
+
+        .cad-project-current-art > span,
+        .cad-project-current-art > b {
+            position: absolute;
+            top: 17px;
+            font-family: monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+            z-index: 2;
+        }
+
+        .cad-project-current-art > span {
+            left: 18px;
+            color: #222222;
+        }
+
+        .cad-project-current-art > b {
+            right: 18px;
+            color: #777777;
+        }
+
+        .cad-wireframe {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 150px;
+            height: 90px;
+
+            transform:
+                translate(-50%, -50%)
+                skew(-10deg)
+                rotate(-8deg);
+
+            border: 2px solid #70746c;
+
+            box-shadow:
+                22px 22px 0
+                rgba(148,180,0,.10);
+        }
+
+        .cad-wireframe:before {
+            content: "";
+            position: absolute;
+
+            width: 52px;
+            height: 52px;
+
+            border: 1px solid #94b400;
+            border-radius: 50%;
+
+            left: 38px;
+            top: 17px;
+        }
+
+        .cad-wireframe:after {
+            content: "";
+            position: absolute;
+
+            width: 210px;
+            height: 1px;
+
+            background: #8a8d86;
+
+            left: -32px;
+            top: 45px;
+
+            opacity: .5;
+        }
+
+        .cad-wireframe.large {
+            width: 270px;
+            height: 170px;
+        }
+
+        .cad-wireframe.large:before {
+            width: 88px;
+            height: 88px;
+            left: 74px;
+            top: 39px;
+        }
+
+        .cad-wireframe.round {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+
+            transform:
+                translate(-50%, -50%);
+        }
+
+        .cad-wireframe.small {
+            width: 105px;
+            height: 70px;
+        }
+
+        .cad-project-current-body {
+            padding: 22px;
+            background: #fafaf7;
+            border-top: 1px solid #d0d0ca;
+        }
+
+        .cad-project-current-body h3 {
+            margin: 0 0 8px;
+            color: #111111;
+            font-size: 24px;
+            letter-spacing: -1px;
+        }
+
+        .cad-project-current-body p {
+            margin: 0 0 16px;
+            color: #5b5b57;
+            font-size: 13px;
+            line-height: 1.65;
+        }
+
+        .cad-project-current-body div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .cad-project-current-body i {
+            font-style: normal;
+            border: 1px solid #c7c7c1;
+            padding: 6px 8px;
+            color: #555555;
+            font-family: monospace;
+            font-size: 8px;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 900px) {
+
+            .cad-projects-current {
+                padding: 70px 5%;
+            }
+
+            .cad-projects-current-header {
+                grid-template-columns: 1fr;
+                gap: 18px;
+            }
+
+            .cad-projects-current-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cad-project-current-large {
+                grid-row: auto;
+                min-height: 520px;
+            }
+
+            .cad-project-current-large
+            .cad-project-current-art {
+                min-height: 340px;
+            }
+        }
+
+
+        /* ===== EXTRA MOBILE ===== */
+
+        @media (max-width: 600px) {
+
+            .cad-projects-current .section-title {
+                font-size: 55px;
+                letter-spacing: -4px;
+            }
+
+            .cad-project-current-art {
+                min-height: 250px;
+            }
+
+            .cad-project-current-large
+            .cad-project-current-art {
+                min-height: 320px;
+            }
+
+            .cad-wireframe.large {
+                width: 210px;
+                height: 135px;
+            }
+
+            .cad-wireframe.large:before {
+                width: 68px;
+                height: 68px;
+                left: 58px;
+                top: 31px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================================
+         SIDEBAR
+         ========================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            AD<span>.</span>
         </div>
 
-        <div class="cad-project-current-body">
+        <nav class="nav">
 
-          <h3>MODMINER PRO</h3>
+            <a href="#home" class="active">
+                HOME
+            </a>
 
-          <p>
-            Tracked modular mining platform concept focused on
-            material handling, interchangeable modules and
-            field serviceability.
-          </p>
+            <a href="#about">
+                ABOUT
+            </a>
 
-          <div>
-            <i>3D CAD</i>
-            <i>MECHANICAL</i>
-            <i>MODULAR</i>
-            <i>HEAVY DUTY</i>
-          </div>
+            <a href="#projects">
+                PROJECTS
+            </a>
 
-        </div>
+            <a href="#cad-projects">
+                CAD PROJECTS
+            </a>
 
-      </article>
+            <a href="#guard">
+                GUARD.ANGEL
+            </a>
 
+            <a href="#lurch">
+                LURCH.AI
+            </a>
 
-      <!-- CORDLESS WELDER -->
-      <article class="cad-project-current">
+            <a href="#pricing">
+                PRICING
+            </a>
 
-        <div class="cad-project-current-art">
-          <span>CONCEPT / 002</span>
-          <b>MW-01</b>
+            <a href="#contact">
+                CONTACT
+            </a>
 
-          <div class="cad-wireframe"></div>
-        </div>
+        </nav>
 
-        <div class="cad-project-current-body">
+        <div class="sidebar-bottom">
 
-          <h3>CORDLESS WELDER</h3>
-
-          <p>
-            Portable machine concept developed around enclosure
-            design and component access.
-          </p>
-
-          <div>
-            <i>PRODUCT CAD</i>
-            <i>ENCLOSURE</i>
-          </div>
+            ANGELITO DAVIDS<br>
+            ENGINEERING / SYSTEMS / INNOVATION<br>
+            © 2026
 
         </div>
 
-      </article>
+    </aside>
 
 
-      <!-- DENTIFY -->
-      <article class="cad-project-current">
+    <!-- ==========================================================
+         MAIN CONTENT
+         ========================================================== -->
 
-        <div class="cad-project-current-art">
-          <span>DIGITAL / 003</span>
-          <b>DENTIFY-01</b>
-
-          <div class="cad-wireframe round"></div>
-        </div>
-
-        <div class="cad-project-current-body">
-
-          <h3>DENTIFY</h3>
-
-          <p>
-            3D visualisation concept combining digital modelling
-            with a technical interface.
-          </p>
-
-          <div>
-            <i>3D MODEL</i>
-            <i>VISUALISATION</i>
-          </div>
-
-        </div>
-
-      </article>
+    <main>
 
 
-      <!-- MODULAR SYSTEMS -->
-      <article class="cad-project-current">
+        <!-- ======================================================
+             HERO
+             ====================================================== -->
 
-        <div class="cad-project-current-art">
-          <span>SYSTEM / 004</span>
-          <b>MOD-SYS</b>
+        <section
+            class="hero"
+            id="home"
+        >
 
-          <div class="cad-wireframe"></div>
-        </div>
+            <div class="hero-inner">
 
-        <div class="cad-project-current-body">
+                <div class="hero-kicker">
+                    ENGINEERING • SYSTEMS • INNOVATION
+                </div>
 
-          <h3>MODULAR SYSTEMS</h3>
+                <h1>
+                    BUILDING<br>
+                    <span class="lime">WHAT'S NEXT.</span>
+                </h1>
 
-          <p>
-            Experimental components, attachments and mechanisms
-            developed as reusable engineering building blocks.
-          </p>
+                <p class="hero-sub">
 
-          <div>
-            <i>MECHANICAL</i>
-            <i>PROTOTYPE</i>
-          </div>
+                    I'm Angelito Davids — engineer, designer and
+                    builder focused on creating practical technology,
+                    intelligent systems and products that solve
+                    real-world problems.
 
-        </div>
+                </p>
 
-      </article>
+                <div class="hero-buttons">
+
+                    <a
+                        href="#projects"
+                        class="btn btn-lime"
+                    >
+                        EXPLORE PROJECTS
+                    </a>
+
+                    <a
+                        href="#contact"
+                        class="btn"
+                    >
+                        GET IN TOUCH
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
 
 
-      <!-- CUSTOM COMPONENTS -->
-      <article class="cad-project-current">
+        <!-- ======================================================
+             ABOUT
+             ====================================================== -->
 
-        <div class="cad-project-current-art">
-          <span>WORKSHOP / 005</span>
-          <b>CUSTOM-01</b>
+        <section
+            class="about-section"
+            id="about"
+        >
 
-          <div class="cad-wireframe small"></div>
-        </div>
+            <div class="section-inner">
 
-        <div class="cad-project-current-body">
+                <div class="about-grid">
 
-          <h3>CUSTOM COMPONENTS</h3>
 
-          <p>
-            Practical brackets, housings and mechanisms designed
-            for real-world fabrication.
-          </p>
+                    <div>
 
-          <div>
-            <i>FREECAD</i>
-            <i>FABRICATION</i>
-          </div>
+                        <span class="section-label">
+                            001 / ABOUT
+                        </span>
 
-        </div>
+                        <h2 class="section-title">
+                            BUILT<br>
+                            <span class="lime">DIFFERENT.</span>
+                        </h2>
 
-      </article>
+                        <div class="about-text">
 
-    </div>
+                            <p>
+                                I build things because I believe the
+                                best ideas should become real.
+                            </p>
 
-  </div>
+                            <p>
+                                My work spans engineering, mechanical
+                                design, software, artificial
+                                intelligence and product development.
+                            </p>
 
-</section>
+                            <p>
+                                Every project starts with one question:
+                                <strong>how can this be better?</strong>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-stats">
+
+                        <div class="stat">
+                            <strong>01</strong>
+                            <span>ENGINEERING</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>02</strong>
+                            <span>SOFTWARE</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>03</strong>
+                            <span>AI SYSTEMS</span>
+                        </div>
+
+                        <div class="stat">
+                            <strong>04</strong>
+                            <span>PRODUCT DESIGN</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>        <!-- ======================================================
+             PROJECTS
+             ====================================================== -->
+
+        <section
+            class="products-section"
+            id="projects"
+        >
+
+            <div class="section-inner">
+
+                <span class="section-label">
+                    002 / PROJECTS
+                </span>
+
+                <h2 class="section-title">
+                    THINGS<br>
+                    I'VE <span class="lime">BUILT.</span>
+                </h2>
+
+                <p class="section-desc">
+
+                    A selection of products, systems and concepts
+                    developed across engineering, software and
+                    emerging technology.
+
+                </p>
+
+
+                <div class="products-grid">
+
+
+                    <!-- GUARD ANGEL -->
+
+                    <article class="product-card">
+
+                        <div class="product-number">
+                            PROJECT / 001
+                        </div>
+
+                        <h3>
+                            GUARD<span class="lime">.ANGEL</span>
+                        </h3>
+
+                        <p>
+
+                            A manual trading protection and
+                            management system designed around
+                            disciplined execution, risk control
+                            and automated position protection.
+
+                        </p>
+
+                        <div class="product-tags">
+
+                            <span>
+                                MT5
+                            </span>
+
+                            <span>
+                                TRADING
+                            </span>
+
+                            <span>
+                                RISK
+                            </span>
+
+                            <span>
+                                AUTOMATION
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- MODMINER -->
+
+                    <article class="product-card">
+
+                        <div class="product-number">
+                            PROJECT / 002
+                        </div>
+
+                        <h3>
+                            MOD<span class="lime">MINER</span>
+                        </h3>
+
+                        <p>
+
+                            Modular mining equipment concept
+                            designed around serviceability,
+                            interchangeable systems and
+                            practical field operation.
+
+                        </p>
+
+                        <div class="product-tags">
+
+                            <span>
+                                MODKRAFT
+                            </span>
+
+                            <span>
+                                MECHANICAL
+                            </span>
+
+                            <span>
+                                MINING
+                            </span>
+
+                            <span>
+                                MODULAR
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- LURCH AI -->
+
+                    <article class="product-card">
+
+                        <div class="product-number">
+                            PROJECT / 003
+                        </div>
+
+                        <h3>
+                            LURCH<span class="lime">.AI</span>
+                        </h3>
+
+                        <p>
+
+                            An experimental artificial intelligence
+                            concept focused on practical tools,
+                            automation and intelligent interaction.
+
+                        </p>
+
+                        <div class="product-tags">
+
+                            <span>
+                                AI
+                            </span>
+
+                            <span>
+                                SOFTWARE
+                            </span>
+
+                            <span>
+                                AUTOMATION
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- DENTIFY -->
+
+                    <article class="product-card">
+
+                        <div class="product-number">
+                            PROJECT / 004
+                        </div>
+
+                        <h3>
+                            DENT<span class="lime">IFY</span>
+                        </h3>
+
+                        <p>
+
+                            A digital dental technology concept
+                            combining 3D visualisation, modelling
+                            and intelligent software.
+
+                        </p>
+
+                        <div class="product-tags">
+
+                            <span>
+                                3D
+                            </span>
+
+                            <span>
+                                SOFTWARE
+                            </span>
+
+                            <span>
+                                MEDTECH
+                            </span>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             CAD PROJECTS — WHITE
+             ====================================================== -->
+
+        <section
+            class="cad-projects-current"
+            id="cad-projects"
+        >
+
+            <div class="cad-projects-current-inner">
+
+
+                <div class="cad-projects-current-header">
+
+                    <div>
+
+                        <span class="section-label">
+                            003 / CAD PORTFOLIO
+                        </span>
+
+                        <h2 class="section-title">
+
+                            CAD
+                            <span class="lime">
+                                PROJECTS.
+                            </span>
+
+                        </h2>
+
+                    </div>
+
+
+                    <p class="section-desc">
+
+                        Selected MODKRAFT engineering concepts,
+                        mechanical designs and digital builds —
+                        developed from idea to model and toward
+                        fabrication.
+
+                    </p>
+
+                </div>
+
+
+                <div class="cad-projects-current-grid">
+
+
+                    <!-- ==================================================
+                         MODMINER PRO
+                         ================================================== -->
+
+                    <article
+                        class="cad-project-current
+                               cad-project-current-large"
+                    >
+
+                        <div class="cad-project-current-art">
+
+                            <span>
+                                FLAGSHIP / 001
+                            </span>
+
+                            <b>
+                                MODKRAFT / MMP-01
+                            </b>
+
+                            <div
+                                class="cad-wireframe large"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="cad-project-current-body">
+
+                            <h3>
+                                MODMINER PRO
+                            </h3>
+
+                            <p>
+
+                                Tracked modular mining platform
+                                concept focused on material handling,
+                                interchangeable modules and field
+                                serviceability.
+
+                            </p>
+
+
+                            <div>
+
+                                <i>
+                                    3D CAD
+                                </i>
+
+                                <i>
+                                    MECHANICAL
+                                </i>
+
+                                <i>
+                                    MODULAR
+                                </i>
+
+                                <i>
+                                    HEAVY DUTY
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ==================================================
+                         CORDLESS WELDER
+                         ================================================== -->
+
+                    <article
+                        class="cad-project-current"
+                    >
+
+                        <div class="cad-project-current-art">
+
+                            <span>
+                                CONCEPT / 002
+                            </span>
+
+                            <b>
+                                MW-01
+                            </b>
+
+                            <div
+                                class="cad-wireframe"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="cad-project-current-body">
+
+                            <h3>
+                                CORDLESS WELDER
+                            </h3>
+
+                            <p>
+
+                                Portable machine concept developed
+                                around enclosure design and
+                                component access.
+
+                            </p>
+
+
+                            <div>
+
+                                <i>
+                                    PRODUCT CAD
+                                </i>
+
+                                <i>
+                                    ENCLOSURE
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ==================================================
+                         DENTIFY
+                         ================================================== -->
+
+                    <article
+                        class="cad-project-current"
+                    >
+
+                        <div class="cad-project-current-art">
+
+                            <span>
+                                DIGITAL / 003
+                            </span>
+
+                            <b>
+                                DENTIFY-01
+                            </b>
+
+                            <div
+                                class="cad-wireframe round"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="cad-project-current-body">
+
+                            <h3>
+                                DENTIFY
+                            </h3>
+
+                            <p>
+
+                                3D visualisation concept combining
+                                digital modelling with a technical
+                                interface.
+
+                            </p>
+
+
+                            <div>
+
+                                <i>
+                                    3D MODEL
+                                </i>
+
+                                <i>
+                                    VISUALISATION
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ==================================================
+                         MODULAR SYSTEMS
+                         ================================================== -->
+
+                    <article
+                        class="cad-project-current"
+                    >
+
+                        <div class="cad-project-current-art">
+
+                            <span>
+                                SYSTEM / 004
+                            </span>
+
+                            <b>
+                                MOD-SYS
+                            </b>
+
+                            <div
+                                class="cad-wireframe"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="cad-project-current-body">
+
+                            <h3>
+                                MODULAR SYSTEMS
+                            </h3>
+
+                            <p>
+
+                                Experimental components,
+                                attachments and mechanisms
+                                developed as reusable engineering
+                                building blocks.
+
+                            </p>
+
+
+                            <div>
+
+                                <i>
+                                    MECHANICAL
+                                </i>
+
+                                <i>
+                                    PROTOTYPE
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- ==================================================
+                         CUSTOM COMPONENTS
+                         ================================================== -->
+
+                    <article
+                        class="cad-project-current"
+                    >
+
+                        <div class="cad-project-current-art">
+
+                            <span>
+                                WORKSHOP / 005
+                            </span>
+
+                            <b>
+                                CUSTOM-01
+                            </b>
+
+                            <div
+                                class="cad-wireframe small"
+                            ></div>
+
+                        </div>
+
+
+                        <div class="cad-project-current-body">
+
+                            <h3>
+                                CUSTOM COMPONENTS
+                            </h3>
+
+                            <p>
+
+                                Practical brackets, housings and
+                                mechanisms designed for
+                                real-world fabrication.
+
+                            </p>
+
+
+                            <div>
+
+                                <i>
+                                    FREECAD
+                                </i>
+
+                                <i>
+                                    FABRICATION
+                                </i>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>        <!-- ======================================================
+             GUARD.ANGEL
+             ====================================================== -->
+
+        <section
+            class="guard-section"
+            id="guard"
+        >
+
+            <div class="section-inner">
+
+                <div class="guard-layout">
+
+
+                    <div>
+
+                        <span class="section-label">
+                            004 / TRADING SYSTEM
+                        </span>
+
+                        <div class="guard-logo">
+                            GUARD<span>.ANGEL</span>
+                        </div>
+
+                        <p class="guard-copy">
+
+                            A disciplined manual trading management
+                            system designed to protect positions,
+                            manage risk and automate trade protection
+                            without generating its own entries.
+
+                        </p>
+
+
+                        <div class="hero-buttons">
+
+                            <a
+                                href="#pricing"
+                                class="btn btn-lime"
+                            >
+                                VIEW PRICING
+                            </a>
+
+                            <a
+                                href="#contact"
+                                class="btn"
+                            >
+                                CONTACT
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="guard-terminal">
+
+                        <div class="terminal-bar">
+
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+                            <div class="terminal-dot"></div>
+
+                        </div>
+
+
+                        <div class="terminal-line">
+
+                            <div>
+                                <span class="green">
+                                    SYSTEM
+                                </span>
+                                :: GUARD.ANGEL
+                            </div>
+
+                            <div>
+                                STATUS ::
+                                <span class="green">
+                                    ACTIVE
+                                </span>
+                            </div>
+
+                            <div>
+                                ENTRY ::
+                                <span class="lime">
+                                    MANUAL
+                                </span>
+                            </div>
+
+                            <div>
+                                RISK ::
+                                <span class="lime">
+                                    PROTECTED
+                                </span>
+                            </div>
+
+                            <div>
+                                SL ::
+                                <span class="green">
+                                    MONITORED
+                                </span>
+                            </div>
+
+                            <div>
+                                POSITION ::
+                                <span class="green">
+                                    MANAGED
+                                </span>
+                            </div>
+
+                            <br>
+
+                            <div>
+                                &gt; protection system ready
+                            </div>
+
+                            <div>
+                                &gt; awaiting manual execution...
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             HOW IT WORKS
+             ====================================================== -->
+
+        <section
+            class="hiw-section"
+            id="how-it-works"
+        >
+
+            <div class="section-inner">
+
+                <span class="section-label">
+                    005 / HOW IT WORKS
+                </span>
+
+                <h2 class="section-title">
+
+                    SIMPLE.<br>
+                    <span class="lime">
+                        DISCIPLINED.
+                    </span>
+
+                </h2>
+
+                <p class="section-desc">
+
+                    Guard.Angel is designed to handle the
+                    mechanical parts of trade management while
+                    keeping the entry decision in your hands.
+
+                </p>
+
+
+                <div class="hiw-steps">
+
+
+                    <!-- STEP 01 -->
+
+                    <div class="hiw-step">
+
+                        <div class="hiw-number">
+                            01
+                        </div>
+
+                        <div class="hiw-content">
+
+                            <div class="hiw-icon">
+                                ◉
+                            </div>
+
+                            <h3>
+                                YOU DECIDE
+                            </h3>
+
+                            <p>
+
+                                You control the entry. Guard.Angel
+                                does not generate automatic buy or
+                                sell signals.
+
+                            </p>
+
+
+                            <div class="hiw-tags">
+
+                                <span>
+                                    MANUAL ENTRY
+                                </span>
+
+                                <span>
+                                    USER CONTROL
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="hiw-arrow">
+                            →
+                        </div>
+
+                    </div>
+
+
+                    <!-- STEP 02 -->
+
+                    <div class="hiw-step">
+
+                        <div class="hiw-number">
+                            02
+                        </div>
+
+                        <div class="hiw-content">
+
+                            <div class="hiw-icon">
+                                ◇
+                            </div>
+
+                            <h3>
+                                RISK IS CALCULATED
+                            </h3>
+
+                            <p>
+
+                                Position sizing and protection
+                                parameters can be configured around
+                                the trade and its stop-loss distance.
+
+                            </p>
+
+
+                            <div class="hiw-tags">
+
+                                <span>
+                                    POSITION SIZE
+                                </span>
+
+                                <span>
+                                    STOP LOSS
+                                </span>
+
+                                <span>
+                                    RISK CONTROL
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="hiw-arrow">
+                            →
+                        </div>
+
+                    </div>
+
+
+                    <!-- STEP 03 -->
+
+                    <div class="hiw-step">
+
+                        <div class="hiw-number">
+                            03
+                        </div>
+
+                        <div class="hiw-content">
+
+                            <div class="hiw-icon">
+                                △
+                            </div>
+
+                            <h3>
+                                PROTECTION ACTIVATES
+                            </h3>
+
+                            <p>
+
+                                Once the position is active,
+                                configured stop-loss, break-even,
+                                trailing and profit-management
+                                rules can take over.
+
+                            </p>
+
+
+                            <div class="hiw-tags">
+
+                                <span>
+                                    BREAK EVEN
+                                </span>
+
+                                <span>
+                                    TRAILING
+                                </span>
+
+                                <span>
+                                    PARTIAL CLOSE
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="hiw-arrow">
+                            →
+                        </div>
+
+                    </div>
+
+
+                    <!-- STEP 04 -->
+
+                    <div class="hiw-step">
+
+                        <div class="hiw-number">
+                            04
+                        </div>
+
+                        <div class="hiw-content">
+
+                            <div class="hiw-icon">
+                                ✓
+                            </div>
+
+                            <h3>
+                                POSITION MANAGED
+                            </h3>
+
+                            <p>
+
+                                The system continues managing the
+                                position according to your configured
+                                protection rules.
+
+                            </p>
+
+
+                            <div class="hiw-tags">
+
+                                <span>
+                                    TRADE MANAGEMENT
+                                </span>
+
+                                <span>
+                                    PROTECTION
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="hiw-arrow">
+                            →
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="hiw-flow-line">
+
+                    <div class="hiw-flow-dot"></div>
+
+                    <div class="hiw-flow-line-bar"></div>
+
+                    <div class="hiw-flow-dot"></div>
+
+                    <div class="hiw-flow-line-bar"></div>
+
+                    <div class="hiw-flow-dot"></div>
+
+                    <div class="hiw-flow-line-bar"></div>
+
+                    <div class="hiw-flow-dot"></div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             LURCH.AI
+             ====================================================== -->
+
+        <section
+            class="about-section"
+            id="lurch"
+        >
+
+            <div class="section-inner">
+
+                <div class="about-grid">
+
+                    <div>
+
+                        <span class="section-label">
+                            006 / ARTIFICIAL INTELLIGENCE
+                        </span>
+
+                        <h2 class="section-title">
+
+                            LURCH<span class="lime">.AI</span>
+
+                        </h2>
+
+                        <p class="section-desc">
+
+                            Experimental artificial intelligence
+                            systems focused on practical automation,
+                            intelligent tools and new ways of
+                            interacting with technology.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="about-stats">
+
+                        <div class="stat">
+
+                            <strong>
+                                AI
+                            </strong>
+
+                            <span>
+                                INTELLIGENCE
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong>
+                                01
+                            </strong>
+
+                            <span>
+                                AUTOMATION
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong>
+                                ∞
+                            </strong>
+
+                            <span>
+                                POSSIBILITIES
+                            </span>
+
+                        </div>
+
+
+                        <div class="stat">
+
+                            <strong>
+                                NOW
+                            </strong>
+
+                            <span>
+                                IN DEVELOPMENT
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>        <!-- ======================================================
+             PRICING
+             ====================================================== -->
+
+        <section
+            class="pricing-section"
+            id="pricing"
+        >
+
+            <div class="section-inner">
+
+                <span class="section-label">
+                    007 / GUARD.ANGEL
+                </span>
+
+                <h2 class="section-title">
+
+                    CHOOSE<br>
+                    <span class="lime">
+                        YOUR PLAN.
+                    </span>
+
+                </h2>
+
+                <p class="section-desc">
+
+                    Simple pricing for Guard.Angel.
+                    Start with the version that fits the way
+                    you want to manage your trades.
+
+                </p>
+
+
+                <div class="pricing-grid">
+
+
+                    <!-- BASIC -->
+
+                    <div class="pricing-card">
+
+                        <span class="pricing-badge">
+                            BASIC
+                        </span>
+
+                        <div class="pricing-price">
+
+                            <span class="currency">
+                                $
+                            </span>
+
+                            <span class="amount">
+                                5
+                            </span>
+
+                            <span class="period">
+                                / ONE TIME
+                            </span>
+
+                        </div>
+
+
+                        <p class="pricing-desc">
+
+                            Get Guard.Angel with a simple
+                            one-time payment.
+
+                        </p>
+
+
+                        <ul class="pricing-features">
+
+                            <li>
+                                ✓ Manual BUY / SELL control
+                            </li>
+
+                            <li>
+                                ✓ Stop-loss management
+                            </li>
+
+                            <li>
+                                ✓ Take-profit management
+                            </li>
+
+                            <li>
+                                ✓ Break-even protection
+                            </li>
+
+                            <li>
+                                ✓ Position management
+                            </li>
+
+                            <li class="strike">
+                                — Premium updates
+                            </li>
+
+                        </ul>
+
+
+                        <a
+                            href="#contact"
+                            class="pricing-btn"
+                        >
+                            GET STARTED
+                        </a>
+
+                    </div>
+
+
+                    <!-- PRO -->
+
+                    <div
+                        class="pricing-card pricing-popular"
+                    >
+
+                        <div class="pricing-popular-tag">
+                            RECOMMENDED
+                        </div>
+
+                        <span class="pricing-badge">
+                            PRO
+                        </span>
+
+
+                        <div class="pricing-price">
+
+                            <span class="currency">
+                                $
+                            </span>
+
+                            <span class="amount">
+                                3
+                            </span>
+
+                            <span class="period">
+                                / MONTH
+                            </span>
+
+                        </div>
+
+
+                        <p class="pricing-desc">
+
+                            Full access with continuing
+                            improvements and updates.
+
+                        </p>
+
+
+                        <ul class="pricing-features">
+
+                            <li>
+                                ✓ Everything in Basic
+                            </li>
+
+                            <li>
+                                ✓ Advanced protection
+                            </li>
+
+                            <li>
+                                ✓ Trailing stop management
+                            </li>
+
+                            <li>
+                                ✓ Partial-close management
+                            </li>
+
+                            <li>
+                                ✓ Ongoing updates
+                            </li>
+
+                            <li>
+                                ✓ Priority improvements
+                            </li>
+
+                        </ul>
+
+
+                        <a
+                            href="#contact"
+                            class="pricing-btn btn-lime"
+                        >
+                            GET PRO
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="pricing-guarantee">
+
+                    <span class="lime">
+                        ✓
+                    </span>
+
+                    <span>
+                        Guard.Angel is a trade-management tool.
+                        Trading involves risk and no system
+                        guarantees profits.
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             CONTACT
+             ====================================================== -->
+
+        <section
+            class="about-section"
+            id="contact"
+        >
+
+            <div class="section-inner">
+
+                <span class="section-label">
+                    008 / CONTACT
+                </span>
+
+                <h2 class="section-title">
+
+                    LET'S<br>
+                    <span class="lime">
+                        BUILD.
+                    </span>
+
+                </h2>
+
+                <p class="section-desc">
+
+                    Have an idea, product or engineering problem
+                    that needs solving? Get in touch.
+
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="mailto:hello@angelitodavids.com"
+                        class="btn btn-lime"
+                    >
+                        EMAIL ME
+                    </a>
+
+                    <a
+                        href="#home"
+                        class="btn"
+                    >
+                        BACK TO TOP
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ======================================================
+             FOOTER
+             ====================================================== -->
+
+        <footer>
+
+            <div class="footer-inner">
+
+                <div class="footer-logo">
+                    AD<span>.</span>
+                </div>
+
+                <p class="footer-tagline">
+                    ENGINEERING • SYSTEMS • INNOVATION
+                </p>
+
+
+                <div class="footer-links">
+
+                    <a href="#home">
+                        HOME
+                    </a>
+
+                    <a href="#about">
+                        ABOUT
+                    </a>
+
+                    <a href="#projects">
+                        PROJECTS
+                    </a>
+
+                    <a href="#cad-projects">
+                        CAD PROJECTS
+                    </a>
+
+                    <a href="#guard">
+                        GUARD.ANGEL
+                    </a>
+
+                    <a href="#lurch">
+                        LURCH.AI
+                    </a>
+
+                    <a href="#pricing">
+                        PRICING
+                    </a>
+
+                    <a href="#contact">
+                        CONTACT
+                    </a>
+
+                </div>
+
+
+                <div class="footer-bottom">
+
+                    © 2026 ANGELITO DAVIDS.
+                    ALL RIGHTS RESERVED.
+
+                </div>
+
+            </div>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- ==========================================================
+         SIMPLE NAV SCRIPT
+         ========================================================== -->
+
+    <script>
+
+        const navLinks =
+            document.querySelectorAll(".nav a");
+
+        const sections =
+            document.querySelectorAll("main section[id]");
+
+
+        window.addEventListener("scroll", () => {
+
+            let current = "";
+
+            sections.forEach(section => {
+
+                const sectionTop =
+                    section.offsetTop - 180;
+
+                if (
+                    window.scrollY >= sectionTop
+                ) {
+                    current = section.getAttribute("id");
+                }
+
+            });
+
+
+            navLinks.forEach(link => {
+
+                link.classList.remove("active");
+
+                if (
+                    link.getAttribute("href") ===
+                    "#" + current
+                ) {
+                    link.classList.add("active");
+                }
+
+            });
+
+        });
+
+
+        /* Smooth navigation */
+
+        navLinks.forEach(link => {
+
+            link.addEventListener("click", function(e) {
+
+                const target =
+                    document.querySelector(
+                        this.getAttribute("href")
+                    );
+
+                if (!target) return;
+
+                e.preventDefault();
+
+                target.scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+</html>

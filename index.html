@@ -1,249 +1,175 @@
-/* ================================
-   CAD PROJECTS — WHITE SECTION
-   ================================ */
+<!-- CAD PROJECTS -->
+<section id="cad-projects" class="cad-projects-current">
 
-.cad-projects-current {
-  background: #ffffff !important;
-  color: #111111 !important;
-  padding: 100px 5.2%;
-  border-top: 1px solid #dddddd;
-  border-bottom: 1px solid #dddddd;
-}
+  <div class="cad-projects-current-inner">
 
-.cad-projects-current-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
+    <div class="cad-projects-current-header">
+      <div>
+        <span class="section-label">003 / CAD PORTFOLIO</span>
 
-.cad-projects-current-header {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: end;
-  margin-bottom: 44px;
-  padding-bottom: 24px;
-  border-bottom: 1px solid #d8d8d3;
-}
+        <h2 class="section-title">
+          CAD <span class="lime">PROJECTS.</span>
+        </h2>
+      </div>
 
-.cad-projects-current .section-label {
-  display: block;
-  color: #596500;
-  font-family: monospace;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  margin-bottom: 16px;
-}
+      <p class="section-desc">
+        Selected MODKRAFT engineering concepts, mechanical designs
+        and digital builds — developed from idea to model and
+        toward fabrication.
+      </p>
+    </div>
 
-.cad-projects-current .section-title {
-  margin: 0;
-  color: #111111;
-  font-size: clamp(50px, 7vw, 92px);
-  line-height: .84;
-  letter-spacing: -5px;
-}
+    <div class="cad-projects-current-grid">
 
-.cad-projects-current .lime {
-  color: #94b400;
-}
+      <!-- MODMINER PRO -->
+      <article class="cad-project-current cad-project-current-large">
 
-.cad-projects-current .section-desc {
-  margin: 0;
-  color: #555555;
-  line-height: 1.8;
-  font-size: 14px;
-  max-width: 470px;
-}
+        <div class="cad-project-current-art">
+          <span>FLAGSHIP / 001</span>
+          <b>MODKRAFT / MMP-01</b>
 
-.cad-projects-current-grid {
-  display: grid;
-  grid-template-columns: 1.5fr .75fr .75fr;
-  gap: 14px;
-}
+          <div class="cad-wireframe large"></div>
+        </div>
 
-.cad-project-current {
-  background: #f3f3f0;
-  border: 1px solid #d0d0ca;
-  min-height: 390px;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  transition: .2s;
-}
+        <div class="cad-project-current-body">
 
-.cad-project-current:hover {
-  transform: translateY(-3px);
-  border-color: #999999;
-}
+          <h3>MODMINER PRO</h3>
 
-.cad-project-current-large {
-  grid-row: span 2;
-  min-height: 794px;
-}
+          <p>
+            Tracked modular mining platform concept focused on
+            material handling, interchangeable modules and
+            field serviceability.
+          </p>
 
-.cad-project-current-art {
-  position: relative;
-  flex: 1;
-  min-height: 230px;
+          <div>
+            <i>3D CAD</i>
+            <i>MECHANICAL</i>
+            <i>MODULAR</i>
+            <i>HEAVY DUTY</i>
+          </div>
 
-  background:
-    linear-gradient(rgba(0,0,0,.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,.055) 1px, transparent 1px);
+        </div>
 
-  background-size: 28px 28px;
-}
+      </article>
 
-.cad-project-current-large .cad-project-current-art {
-  min-height: 590px;
-}
 
-.cad-project-current-art > span,
-.cad-project-current-art > b {
-  position: absolute;
-  top: 17px;
-  font-family: monospace;
-  font-size: 9px;
-  letter-spacing: 2px;
-  z-index: 2;
-}
+      <!-- CORDLESS WELDER -->
+      <article class="cad-project-current">
 
-.cad-project-current-art > span {
-  left: 18px;
-  color: #222222;
-}
+        <div class="cad-project-current-art">
+          <span>CONCEPT / 002</span>
+          <b>MW-01</b>
 
-.cad-project-current-art > b {
-  right: 18px;
-  color: #777777;
-}
+          <div class="cad-wireframe"></div>
+        </div>
 
-.cad-wireframe {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 150px;
-  height: 90px;
+        <div class="cad-project-current-body">
 
-  transform:
-    translate(-50%, -50%)
-    skew(-10deg)
-    rotate(-8deg);
+          <h3>CORDLESS WELDER</h3>
 
-  border: 2px solid #70746c;
-  box-shadow: 22px 22px 0 rgba(148,180,0,.10);
-}
+          <p>
+            Portable machine concept developed around enclosure
+            design and component access.
+          </p>
 
-.cad-wireframe:before {
-  content: "";
-  position: absolute;
+          <div>
+            <i>PRODUCT CAD</i>
+            <i>ENCLOSURE</i>
+          </div>
 
-  width: 52px;
-  height: 52px;
+        </div>
 
-  border: 1px solid #94b400;
-  border-radius: 50%;
+      </article>
 
-  left: 38px;
-  top: 17px;
-}
 
-.cad-wireframe:after {
-  content: "";
+      <!-- DENTIFY -->
+      <article class="cad-project-current">
 
-  position: absolute;
+        <div class="cad-project-current-art">
+          <span>DIGITAL / 003</span>
+          <b>DENTIFY-01</b>
 
-  width: 210px;
-  height: 1px;
+          <div class="cad-wireframe round"></div>
+        </div>
 
-  background: #8a8d86;
+        <div class="cad-project-current-body">
 
-  left: -32px;
-  top: 45px;
+          <h3>DENTIFY</h3>
 
-  opacity: .5;
-}
+          <p>
+            3D visualisation concept combining digital modelling
+            with a technical interface.
+          </p>
 
-.cad-wireframe.large {
-  width: 270px;
-  height: 170px;
-}
+          <div>
+            <i>3D MODEL</i>
+            <i>VISUALISATION</i>
+          </div>
 
-.cad-wireframe.large:before {
-  width: 88px;
-  height: 88px;
-  left: 74px;
-  top: 39px;
-}
+        </div>
 
-.cad-wireframe.round {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-}
+      </article>
 
-.cad-wireframe.small {
-  width: 105px;
-  height: 70px;
-}
 
-.cad-project-current-body {
-  padding: 22px;
-  background: #fafaf7;
-  border-top: 1px solid #d0d0ca;
-}
+      <!-- MODULAR SYSTEMS -->
+      <article class="cad-project-current">
 
-.cad-project-current-body h3 {
-  margin: 0 0 8px;
-  color: #111111;
-  font-size: 24px;
-  letter-spacing: -1px;
-}
+        <div class="cad-project-current-art">
+          <span>SYSTEM / 004</span>
+          <b>MOD-SYS</b>
 
-.cad-project-current-body p {
-  margin: 0 0 16px;
-  color: #5b5b57;
-  font-size: 13px;
-  line-height: 1.65;
-}
+          <div class="cad-wireframe"></div>
+        </div>
 
-.cad-project-current-body div {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-}
+        <div class="cad-project-current-body">
 
-.cad-project-current-body i {
-  font-style: normal;
-  border: 1px solid #c7c7c1;
-  padding: 6px 8px;
-  color: #555555;
-  font-family: monospace;
-  font-size: 8px;
-  letter-spacing: 1px;
-}
+          <h3>MODULAR SYSTEMS</h3>
 
-@media (max-width: 900px) {
+          <p>
+            Experimental components, attachments and mechanisms
+            developed as reusable engineering building blocks.
+          </p>
 
-  .cad-projects-current {
-    padding: 70px 5%;
-  }
+          <div>
+            <i>MECHANICAL</i>
+            <i>PROTOTYPE</i>
+          </div>
 
-  .cad-projects-current-header {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
+        </div>
 
-  .cad-projects-current-grid {
-    grid-template-columns: 1fr;
-  }
+      </article>
 
-  .cad-project-current-large {
-    grid-row: auto;
-    min-height: 520px;
-  }
 
-  .cad-project-current-large .cad-project-current-art {
-    min-height: 340px;
-  }
-}
+      <!-- CUSTOM COMPONENTS -->
+      <article class="cad-project-current">
+
+        <div class="cad-project-current-art">
+          <span>WORKSHOP / 005</span>
+          <b>CUSTOM-01</b>
+
+          <div class="cad-wireframe small"></div>
+        </div>
+
+        <div class="cad-project-current-body">
+
+          <h3>CUSTOM COMPONENTS</h3>
+
+          <p>
+            Practical brackets, housings and mechanisms designed
+            for real-world fabrication.
+          </p>
+
+          <div>
+            <i>FREECAD</i>
+            <i>FABRICATION</i>
+          </div>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>

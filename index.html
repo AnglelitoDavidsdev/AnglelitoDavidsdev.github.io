@@ -23,11 +23,6 @@
             --border: #222222;
             --border-light: #333333;
             --red-sidebar: #8b1a1a;
-            --sa-red: #de3831;
-            --sa-blue: #001489;
-            --sa-green: #007a4b;
-            --sa-yellow: #ffb612;
-            --sa-black: #000000;
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         html { scroll-behavior: smooth; }
@@ -144,27 +139,26 @@
             gap: 4rem; align-items: center;
         }
 
-        /* GUARANTEED ROUND PHOTO WITH SA FLAG GRADIENT */
+        /* FIXED: ROUND SA FLAG BACKGROUND */
         .profile-image-wrap {
             position: relative;
-            padding: 10px;
-            
-            /* This CSS gradient replicates the SA flag colors */
-            background: conic-gradient(
-                var(--sa-red) 0deg 90deg, 
-                var(--sa-blue) 90deg 180deg, 
-                var(--sa-green) 180deg 270deg, 
-                var(--sa-yellow) 270deg 360deg
-            );
-            
-            border-radius: 50%;
-            box-shadow: 0 0 25px rgba(0,0,0,0.6);
+            padding: 12px;
             display: inline-block;
-            transition: transform 0.3s ease;
         }
-        .profile-image-wrap:hover {
-            transform: scale(1.02);
+        
+        /* This creates the perfect circle flag behind the photo */
+        .profile-image-wrap::before {
+            content: '';
+            position: absolute;
+            top: 12px; left: 12px; right: 12px; bottom: 12px;
+            background-image: url('sa-flag-bg_.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 50%;
+            z-index: 0;
+            box-shadow: 0 0 25px rgba(0,0,0,0.6);
         }
+
         .profile-image {
             width: 280px; height: 280px;
             border-radius: 50%;
@@ -174,9 +168,10 @@
             position: relative;
             z-index: 2;
         }
+        
         .profile-image-badge {
             position: absolute; 
-            bottom: 15px; right: 15px;
+            bottom: 10px; right: 10px;
             background: var(--lime); color: #000;
             padding: 0.4rem 1.2rem; font-size: 0.7rem; font-weight: 800;
             letter-spacing: 2px; text-transform: uppercase; border-radius: 50px;
@@ -296,6 +291,7 @@
         <section class="profile-section" id="profile">
             <div class="profile-inner">
                 <div class="profile-image-wrap">
+                    <!-- This uses a CSS pseudo-element ::before to perfectly place your flag image behind the round photo -->
                     <img src="profile.png" alt="Angelito Davids" class="profile-image">
                     <div class="profile-image-badge">FOUNDER</div>
                 </div>

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angelito Davids | Guard.Angel · MODMINER · Lurch.AI · SCANTRAK</title>
+    <meta name="description" content="Guard.Angel trading protection, MODMINER modular mining platforms, Lurch.AI intelligent analysis, and SCANTRAK precision scanning.">
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -125,12 +126,29 @@
         }
         .btn-dark:hover { border-color: var(--lime); color: var(--lime); }
 
+        /* ===== PROFILE SECTION WITH DIAGONAL SA FLAG BACKGROUND ===== */
         .profile-section {
             background: var(--bg-elevated);
             padding: 6rem 3rem;
             position: relative;
             overflow: hidden;
         }
+
+        /* This creates the exact diagonal SA flag background like your screenshot */
+        .profile-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                linear-gradient(135deg, rgba(222,56,49,0.8) 0%, transparent 40%),
+                linear-gradient(225deg, rgba(0,20,137,0.8) 0%, transparent 40%),
+                linear-gradient(135deg, rgba(0,122,75,0.6) 30%, transparent 70%),
+                linear-gradient(225deg, rgba(255,182,18,0.4) 30%, transparent 70%),
+                linear-gradient(to bottom right, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
+            pointer-events: none;
+            z-index: 0;
+        }
+
         .profile-inner {
             position: relative; z-index: 1;
             max-width: 1200px; margin: 0 auto;
@@ -138,48 +156,28 @@
             gap: 4rem; align-items: center;
         }
 
-        /* FIXED: FULL SOUTH AFRICAN FLAG BACKGROUND (CSS BUILT) */
+        /* SQUARE / ROUNDED PHOTO LIKE YOUR SCREENSHOT */
         .profile-image-wrap {
             position: relative;
-            padding: 8px;
             display: inline-block;
-            
-            /* This builds the South African flag from scratch using gradients */
-            background: 
-                /* Black Triangle */
-                conic-gradient(from 90deg at 50% 50%, #000 0deg, #000 60deg, transparent 60deg) 50% 50% / 100% 100% no-repeat,
-                /* White Triangle */
-                conic-gradient(from 90deg at 50% 50%, #fff 0deg, #fff 60deg, transparent 60deg) 50% 50% / calc(100% - 6px) calc(100% - 6px) no-repeat,
-                /* Yellow Triangle */
-                conic-gradient(from 90deg at 50% 50%, #ffb612 0deg, #ffb612 60deg, transparent 60deg) 50% 50% / calc(100% - 12px) calc(100% - 12px) no-repeat,
-                /* Red Top Half */
-                linear-gradient(to bottom, #de3831 50%, transparent 50%),
-                /* Blue Bottom Half */
-                linear-gradient(to top, #001489 50%, transparent 50%),
-                /* Green Background Fill */
-                #007a4b;
-            
-            background-blend-mode: normal, normal, normal, normal, normal, normal;
-            border-radius: 50%;
+            border-radius: 16px;
             box-shadow: 0 0 25px rgba(0,0,0,0.6);
         }
-
         .profile-image {
             width: 280px; height: 280px;
-            border-radius: 50%;
+            border-radius: 16px;
             object-fit: cover;
-            border: 6px solid var(--bg); 
+            border: 4px solid rgba(255,255,255,0.1); 
             display: block;
             position: relative;
             z-index: 2;
         }
-        
         .profile-image-badge {
             position: absolute; 
-            bottom: 10px; right: 10px;
+            bottom: -12px; right: 15px;
             background: var(--lime); color: #000;
             padding: 0.4rem 1.2rem; font-size: 0.7rem; font-weight: 800;
-            letter-spacing: 2px; text-transform: uppercase; border-radius: 50px;
+            letter-spacing: 2px; text-transform: uppercase; border-radius: 6px;
             z-index: 3;
             box-shadow: 0 4px 10px rgba(0,0,0,0.5);
         }

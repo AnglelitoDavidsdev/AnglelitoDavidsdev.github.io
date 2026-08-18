@@ -132,15 +132,26 @@
             overflow: hidden;
         }
 
-        /* FIXED: USING THE RAW GITHUB LINK TO FORCE THE FLAG TO LOAD */
+        /* ABSOLUTE FINAL: CSS DRAWN SA FLAG - 0 IMAGES REQUIRED */
         .profile-section::before {
             content: '';
             position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: url('https://raw.githubusercontent.com/AnglelitoDavidsdev/AnglelitoDavidsdev.github.io/Launch/sa-flag-bg_.png') center/cover no-repeat;
-            opacity: 0.5;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: 
+                linear-gradient(115deg, transparent 35%, #de3831 35%, #de3831 50%, transparent 50%),
+                linear-gradient(155deg, transparent 50%, #001489 50%, #001489 65%, transparent 65%),
+                linear-gradient(135deg, transparent 30%, #000 30%, #000 32%, transparent 32%),
+                linear-gradient(135deg, transparent 33%, #fff 33%, #fff 35%, transparent 35%),
+                linear-gradient(135deg, transparent 36%, #ffb612 36%, #ffb612 38%, transparent 38%),
+                linear-gradient(180deg, #007a4b 50%, #000 50%);
+            background-size: 100% 100%;
+            transform: rotate(-15deg) scale(1.5);
             pointer-events: none;
             z-index: 0;
+            opacity: 0.5;
         }
 
         .profile-inner {

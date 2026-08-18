@@ -132,13 +132,13 @@
             overflow: hidden;
         }
 
-        /* EXACT FLAG BACKGROUND FROM YOUR SCREENSHOT */
+        /* FIXED: MATCHING THE FILENAME WITH THE UNDERSCORE EXACTLY */
         .profile-section::before {
             content: '';
             position: absolute;
             top: 0; left: 0; right: 0; bottom: 0;
             background: url('sa-flag-bg_.png') center/cover no-repeat;
-            opacity: 0.35; /* Darken it just enough for text readability */
+            opacity: 0.5;
             pointer-events: none;
             z-index: 0;
         }
@@ -156,7 +156,7 @@
         }
         .profile-image {
             width: 280px; height: 280px;
-            border-radius: 16px; /* Square with rounded corners */
+            border-radius: 16px;
             object-fit: cover;
             border: 2px solid var(--border);
             display: block;

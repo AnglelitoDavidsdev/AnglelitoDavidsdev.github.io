@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
     <style>
         :root {
             --bg: #050505;
@@ -44,7 +45,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* ===== SIDEBAR ===== */
         .sidebar {
             position: fixed;
             left: 0; top: 0; bottom: 0;
@@ -72,10 +72,8 @@
         .sidebar-divider { width: 24px; height: 1px; background: rgba(255,255,255,0.2); margin: 0.5rem 0; }
         .sidebar-bottom { margin-top: auto; display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
 
-        /* ===== MAIN LAYOUT ===== */
         .main { margin-left: 64px; }
 
-        /* ===== NAVBAR ===== */
         .navbar {
             position: fixed;
             top: 0; left: 64px; right: 0;
@@ -90,57 +88,10 @@
             padding: 0 3rem;
         }
         .logo { display: flex; align-items: center; }
-        .wolverine-logo {
-            width: 125px;
-            height: 40px;
-            display: block;
-        }
-        .wolverine-logo path[stroke="#ff3333"] {
-            animation: clawRippleRed 2s ease-in-out infinite;
-            transform-origin: center;
-        }
-        .wolverine-logo g:nth-child(2) path:nth-child(2) {
-            animation-delay: 0.08s;
-        }
-        .wolverine-logo g:nth-child(2) path:nth-child(3) {
-            animation-delay: 0.16s;
-        }
-        @keyframes clawRippleRed {
-            0%, 100% { stroke-opacity: 1; filter: drop-shadow(0 0 3px rgba(255,51,51,0.6)); }
-            50% { stroke-opacity: 0.7; filter: drop-shadow(0 0 10px rgba(255,51,51,1)); }
-        }
-        .wolverine-logo ellipse[fill="#ff3333"] {
-            animation: bloodDrip 2.5s ease-in-out infinite;
-        }
-        .wolverine-logo ellipse:nth-child(2) { animation-delay: 0.3s; }
-        .wolverine-logo ellipse:nth-child(3) { animation-delay: 0.6s; }
-        .wolverine-logo ellipse:nth-child(4) { animation-delay: 0.9s; }
-        @keyframes bloodDrip {
-            0%, 100% { opacity: 0.8; transform: translateY(0) scale(1); }
-            50% { opacity: 1; transform: translateY(1.5px) scale(1.1); }
-        }
-        .wolverine-logo circle[fill="#ff3333"] {
-            animation: dotPulse 2s ease-in-out infinite;
-        }
-        @keyframes dotPulse {
-            0%, 100% { opacity: 0.9; }
-            50% { opacity: 1; filter: drop-shadow(0 0 6px rgba(255,51,51,0.8)); }
-        }
+        .wolverine-logo { width: 125px; height: 40px; display: block; }
         
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
-        .nav-link {
-            color: var(--text-dim);
-            text-decoration: none;
-            font-size: 0.8rem;
-            font-weight: 600;
-            transition: color 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
+        .nav-links { display: flex; align-items: center; gap: 1.5rem; }
+        .nav-link { color: var(--text-dim); text-decoration: none; font-size: 0.8rem; font-weight: 600; transition: color 0.3s; text-transform: uppercase; letter-spacing: 1px; }
         .nav-link:hover { color: var(--lime); }
         
         .nav-cta {
@@ -158,7 +109,6 @@
         }
         .nav-cta:hover { border-color: var(--lime); color: var(--lime); }
 
-        /* ===== HERO ===== */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -201,72 +151,42 @@
         }
         .btn-dark:hover { border-color: var(--lime); color: var(--lime); }
 
-        /* ===== PROFILE SECTION ===== */
         .profile-section {
             background: var(--bg-elevated);
             padding: 6rem 3rem;
             position: relative;
             overflow: hidden;
         }
-
         .profile-section::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: url('sa-flag-bg_.png') center/cover no-repeat;
             opacity: 0.6;
             pointer-events: none;
             z-index: 0;
         }
-
         .profile-section::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 0; left: 0; right: 0; bottom: 0;
             background: linear-gradient(180deg, var(--bg-elevated) 0%, transparent 25%, transparent 75%, var(--bg-elevated) 100%);
             pointer-events: none;
             z-index: 0;
         }
-
         .profile-inner {
-            position: relative;
-            z-index: 1;
-        }
-        .profile-inner {
+            position: relative; z-index: 1;
             max-width: 1200px; margin: 0 auto;
             display: grid; grid-template-columns: 320px 1fr;
             gap: 4rem; align-items: center;
         }
-        .profile-image-wrap {
-            position: relative;
-        }
+        .profile-image-wrap { position: relative; }
         .profile-image {
             width: 280px; height: 280px;
             border-radius: 16px;
             object-fit: cover;
             border: 2px solid var(--border);
             display: block;
-        }
-        .profile-image-placeholder {
-            width: 280px; height: 280px;
-            border-radius: 16px;
-            background: var(--surface);
-            border: 2px dashed var(--border-light);
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            gap: 0.5rem;
-        }
-        .profile-image-placeholder svg {
-            width: 48px; height: 48px;
-            stroke: var(--text-muted);
         }
         .profile-image-badge {
             position: absolute;
@@ -277,15 +197,9 @@
             letter-spacing: 2px; text-transform: uppercase;
             border-radius: 4px;
         }
-        .profile-text h2 {
-            font-size: 2.5rem; font-weight: 900;
-            letter-spacing: -2px; margin-bottom: 1rem;
-        }
+        .profile-text h2 { font-size: 2.5rem; font-weight: 900; letter-spacing: -2px; margin-bottom: 1rem; }
         .profile-text h2 span { color: var(--lime); }
-        .profile-text p {
-            color: var(--text-dim); line-height: 1.8;
-            font-size: 1.05rem; margin-bottom: 1.5rem;
-        }
+        .profile-text p { color: var(--text-dim); line-height: 1.8; font-size: 1.05rem; margin-bottom: 1.5rem; }
         .profile-role {
             display: inline-flex; align-items: center; gap: 0.5rem;
             background: var(--surface); border: 1px solid var(--border);
@@ -294,9 +208,7 @@
             font-weight: 600; letter-spacing: 1px;
             margin-bottom: 1.5rem;
         }
-        .profile-socials {
-            display: flex; gap: 1rem; margin-top: 1.5rem;
-        }
+        .profile-socials { display: flex; gap: 1rem; margin-top: 1.5rem; }
         .profile-socials a {
             width: 44px; height: 44px;
             border-radius: 10px;
@@ -308,533 +220,8 @@
             font-size: 1.1rem;
             transition: all 0.3s;
         }
-        .profile-socials a:hover {
-            border-color: var(--lime); color: var(--lime);
-            transform: translateY(-2px);
-        }
+        .profile-socials a:hover { border-color: var(--lime); color: var(--lime); transform: translateY(-2px); }
 
-        /* ===== CAD SECTION ===== */
-        .cad-section {
-            background: var(--bg);
-            padding: 6rem 3rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cad-inner {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .cad-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .cad-showcase {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            margin-bottom: 3rem;
-        }
-
-        .cad-visual {
-            position: relative;
-            height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cad-grid-bg {
-            position: relative;
-            width: 320px;
-            height: 320px;
-            perspective: 800px;
-        }
-
-        .cad-axis {
-            position: absolute;
-            background: var(--border-light);
-        }
-
-        .cad-axis.x-axis {
-            width: 100%;
-            height: 1px;
-            top: 50%;
-            left: 0;
-        }
-
-        .cad-axis.y-axis {
-            width: 1px;
-            height: 100%;
-            left: 50%;
-            top: 0;
-        }
-
-        .cad-axis.z-axis {
-            width: 1px;
-            height: 100%;
-            left: 50%;
-            top: 0;
-            transform: rotateZ(45deg);
-            transform-origin: center;
-        }
-
-        .cad-cube {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 120px;
-            height: 120px;
-            transform-style: preserve-3d;
-            transform: translate(-50%, -50%) rotateX(-20deg) rotateY(35deg);
-            animation: cadRotate 8s linear infinite;
-        }
-
-        @keyframes cadRotate {
-            from { transform: translate(-50%, -50%) rotateX(-20deg) rotateY(0deg); }
-            to { transform: translate(-50%, -50%) rotateX(-20deg) rotateY(360deg); }
-        }
-
-        .cube-face {
-            position: absolute;
-            width: 120px;
-            height: 120px;
-            background: rgba(204, 255, 0, 0.05);
-            border: 1px solid rgba(204, 255, 0, 0.3);
-        }
-
-        .cube-face.front  { transform: translateZ(60px); }
-        .cube-face.back   { transform: translateZ(-60px) rotateY(180deg); }
-        .cube-face.left   { transform: translateX(-60px) rotateY(-90deg); }
-        .cube-face.right  { transform: translateX(60px) rotateY(90deg); }
-        .cube-face.top    { transform: translateY(-60px) rotateX(90deg); }
-        .cube-face.bottom { transform: translateY(60px) rotateX(-90deg); }
-
-        .cad-dim {
-            position: absolute;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.7rem;
-            color: var(--text-muted);
-        }
-
-        .cad-dim .dim-line {
-            width: 40px;
-            height: 1px;
-            background: var(--text-muted);
-            position: relative;
-        }
-
-        .cad-dim .dim-line::before,
-        .cad-dim .dim-line::after {
-            content: '';
-            position: absolute;
-            width: 1px;
-            height: 6px;
-            background: var(--text-muted);
-            top: -2.5px;
-        }
-
-        .cad-dim .dim-line::before { left: 0; }
-        .cad-dim .dim-line::after { right: 0; }
-
-        .cad-dim.dim-x { bottom: 20px; left: 50%; transform: translateX(-50%); }
-        .cad-dim.dim-y { right: 10px; top: 50%; transform: translateY(-50%) rotate(90deg); }
-        .cad-dim.dim-z { top: 10px; left: 20px; }
-
-        .cad-skills {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 1rem;
-        }
-
-        .cad-skill-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.8rem;
-            transition: all 0.3s;
-        }
-
-        .cad-skill-card:hover {
-            border-color: var(--lime);
-            transform: translateY(-3px);
-        }
-
-        .cad-skill-card::before {
-            content: '';
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: var(--lime);
-            margin-bottom: 1rem;
-            border-radius: 1px;
-            opacity: 0.5;
-            transition: opacity 0.3s;
-        }
-
-        .cad-skill-card:hover::before {
-            opacity: 1;
-        }
-
-        .cad-skill-icon {
-            font-size: 1.8rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .cad-skill-card h4 {
-            font-size: 0.8rem;
-            font-weight: 800;
-            letter-spacing: 1.5px;
-            color: #fff;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-
-        .cad-skill-card p {
-            color: var(--text-dim);
-            font-size: 0.85rem;
-            line-height: 1.6;
-        }
-
-        .cad-cta {
-            text-align: center;
-            margin-top: 2rem;
-        }
-
-        /* ===== 3D PANEL SECTION ===== */
-        .panel-section {
-            background: var(--bg);
-            padding: 6rem 3rem;
-            perspective: 1200px;
-            overflow: hidden;
-        }
-        .panel-inner {
-            max-width: 1200px; margin: 0 auto;
-        }
-        .panel-header {
-            text-align: center; margin-bottom: 3rem;
-        }
-        .panel-header .section-label { margin-bottom: 1rem; }
-        .panel-header h2 {
-            font-size: clamp(2rem, 4vw, 3.5rem);
-            font-weight: 900; letter-spacing: -2px;
-        }
-        .panel-header h2 span { color: var(--lime); }
-        .panel-header p {
-            color: var(--text-dim); margin-top: 1rem;
-            font-size: 1.05rem;
-        }
-
-        /* 3D Terminal */
-        .terminal-3d-wrap {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem 0;
-            transform-style: preserve-3d;
-        }
-        .terminal-3d {
-            width: 100%; max-width: 900px;
-            background: linear-gradient(145deg, #0f0f0f, #1a1a1a);
-            border: 1px solid var(--border-light);
-            border-radius: 20px;
-            padding: 2rem;
-            position: relative;
-            transform: rotateX(5deg) rotateY(-3deg);
-            transform-style: preserve-3d;
-            box-shadow:
-                0 40px 80px rgba(0,0,0,0.6),
-                0 0 0 1px rgba(204,255,0,0.05),
-                inset 0 1px 0 rgba(255,255,255,0.03);
-            transition: transform 0.6s ease;
-        }
-        .terminal-3d:hover {
-            transform: rotateX(2deg) rotateY(-1deg) translateZ(20px);
-        }
-        .terminal-3d::before {
-            content: '';
-            position: absolute;
-            top: -1px; left: 20%; right: 20%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--lime), transparent);
-            border-radius: 2px;
-        }
-
-        .terminal-header {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
-        }
-        .terminal-title {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem; color: var(--lime);
-            letter-spacing: 2px;
-        }
-        .terminal-status {
-            display: flex; align-items: center; gap: 0.5rem;
-            font-size: 0.75rem; color: var(--green);
-            font-family: 'JetBrains Mono', monospace;
-        }
-        .status-dot {
-            width: 8px; height: 8px;
-            background: var(--green);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.4; }
-        }
-
-        .terminal-body {
-            display: grid;
-            grid-template-columns: 1fr 280px;
-            gap: 2rem;
-        }
-
-        /* Chart Area */
-        .chart-area {
-            background: var(--bg);
-            border-radius: 12px;
-            border: 1px solid var(--border);
-            padding: 1.5rem;
-            position: relative;
-            overflow: hidden;
-            min-height: 320px;
-        }
-        .chart-header {
-            display: flex; justify-content: space-between; align-items: center;
-            margin-bottom: 1rem;
-        }
-        .chart-pair {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.85rem; font-weight: 700;
-            color: #fff;
-        }
-        .chart-pair span { color: var(--text-muted); font-weight: 400; }
-        .chart-price {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.1rem; font-weight: 700;
-        }
-        .chart-price.up { color: var(--green); }
-        .chart-price.down { color: var(--red); }
-
-        .chart-canvas {
-            position: relative;
-            height: 220px;
-            display: flex;
-            align-items: flex-end;
-            gap: 3px;
-            padding-bottom: 30px;
-        }
-        .candle {
-            flex: 1;
-            min-width: 8px;
-            border-radius: 2px;
-            position: relative;
-            transition: all 0.3s;
-        }
-        .candle.green { background: var(--green); }
-        .candle.red { background: var(--red); }
-        .candle.wick {
-            position: absolute;
-            width: 1px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: inherit;
-            opacity: 0.6;
-        }
-
-        .sl-line, .tp-line {
-            position: absolute;
-            left: 0; right: 0;
-            height: 1px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            padding: 0 8px;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            letter-spacing: 1px;
-        }
-        .sl-line {
-            background: repeating-linear-gradient(90deg, var(--red) 0, var(--red) 5px, transparent 5px, transparent 10px);
-            color: var(--red);
-            bottom: 60px;
-        }
-        .tp-line {
-            background: repeating-linear-gradient(90deg, var(--green) 0, var(--green) 5px, transparent 5px, transparent 10px);
-            color: var(--green);
-            bottom: 160px;
-        }
-        .entry-line {
-            position: absolute;
-            left: 0; right: 0;
-            height: 1px;
-            background: var(--lime);
-            bottom: 100px;
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.65rem;
-            color: var(--lime);
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            padding: 0 8px;
-            letter-spacing: 1px;
-            box-shadow: 0 0 10px rgba(204,255,0,0.3);
-        }
-
-        /* Control Panel */
-        .control-panel {
-            display: flex; flex-direction: column; gap: 1rem;
-        }
-        .panel-card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.2rem;
-        }
-        .panel-card h4 {
-            font-size: 0.7rem; font-weight: 700;
-            letter-spacing: 2px; text-transform: uppercase;
-            color: var(--text-muted); margin-bottom: 1rem;
-        }
-
-        .trade-btns {
-            display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;
-        }
-        .trade-btn {
-            padding: 1rem;
-            border: none; border-radius: 8px;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem; font-weight: 800;
-            letter-spacing: 2px; text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-        .trade-btn.buy {
-            background: rgba(0,255,136,0.1);
-            color: var(--green);
-            border: 1px solid rgba(0,255,136,0.3);
-        }
-        .trade-btn.buy:hover {
-            background: rgba(0,255,136,0.2);
-            box-shadow: 0 0 20px rgba(0,255,136,0.2);
-        }
-        .trade-btn.sell {
-            background: rgba(255,68,68,0.1);
-            color: var(--red);
-            border: 1px solid rgba(255,68,68,0.3);
-        }
-        .trade-btn.sell:hover {
-            background: rgba(255,68,68,0.2);
-            box-shadow: 0 0 20px rgba(255,68,68,0.2);
-        }
-        .trade-btn:active { transform: scale(0.97); }
-
-        .metric-row {
-            display: flex; justify-content: space-between;
-            padding: 0.6rem 0;
-            border-bottom: 1px solid var(--border);
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.8rem;
-        }
-        .metric-row:last-child { border-bottom: none; }
-        .metric-label { color: var(--text-muted); }
-        .metric-value { color: #fff; font-weight: 700; }
-        .metric-value.lime { color: var(--lime); }
-        .metric-value.green { color: var(--green); }
-        .metric-value.red { color: var(--red); }
-
-        .risk-bar-wrap {
-            margin-top: 0.5rem;
-        }
-        .risk-bar-bg {
-            height: 6px;
-            background: var(--border);
-            border-radius: 3px;
-            overflow: hidden;
-        }
-        .risk-bar-fill {
-            height: 100%;
-            width: 2%;
-            background: linear-gradient(90deg, var(--green), var(--lime));
-            border-radius: 3px;
-            transition: width 0.5s ease;
-        }
-
-        .protection-status {
-            display: flex; align-items: center; gap: 0.75rem;
-            padding: 0.75rem;
-            background: rgba(204,255,0,0.05);
-            border: 1px solid rgba(204,255,0,0.15);
-            border-radius: 8px;
-            margin-top: 0.5rem;
-        }
-        .protection-status .icon {
-            width: 32px; height: 32px;
-            background: rgba(204,255,0,0.1);
-            border-radius: 8px;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 1rem;
-        }
-        .protection-status .text {
-            font-size: 0.8rem; color: var(--text-dim);
-        }
-        .protection-status .text strong {
-            color: var(--lime); display: block;
-        }
-
-        /* Active Trade Overlay */
-        .trade-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: rgba(5,5,5,0.85);
-            backdrop-filter: blur(4px);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s;
-            border-radius: 12px;
-            z-index: 10;
-        }
-        .trade-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-        .trade-overlay h3 {
-            font-size: 1.2rem; color: var(--lime);
-            letter-spacing: 2px;
-        }
-        .trade-overlay .pnl {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 2rem; font-weight: 900;
-        }
-        .trade-overlay .pnl.positive { color: var(--green); }
-        .trade-overlay .pnl.negative { color: var(--red); }
-        .close-trade-btn {
-            padding: 0.8rem 2rem;
-            background: var(--lime); color: #000;
-            border: none; border-radius: 8px;
-            font-weight: 800; letter-spacing: 2px;
-            text-transform: uppercase; cursor: pointer;
-            font-size: 0.75rem;
-        }
-
-        /* ===== SECTIONS ===== */
         section { padding: 6rem 3rem; max-width: 1200px; margin: 0 auto; }
         .section-label {
             font-size: 0.7rem; font-weight: 700; letter-spacing: 4px;
@@ -848,7 +235,6 @@
         .section-title .lime { color: var(--lime); }
         .section-desc { color: var(--text-dim); font-size: 1.1rem; line-height: 1.7; max-width: 600px; }
 
-        /* ===== PRODUCTS ===== */
         .products { background: var(--bg-elevated); }
         .products-grid {
             display: grid;
@@ -871,5 +257,242 @@
             font-size: 0.7rem; font-weight: 700; letter-spacing: 3px;
             color: var(--lime); margin-bottom: 1rem; display: block;
         }
-        .product-card h3 {
-            font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; margin-bottom
+        .product-card h3 { font-size: 1.8rem; font-weight: 900; letter-spacing: -1px; margin-bottom: 0.3rem; }
+        .product-card .brand {
+            font-size: 0.7rem; font-weight: 700; letter-spacing: 3px;
+            color: var(--text-muted); text-transform: uppercase;
+            margin-bottom: 1.5rem; display: block;
+        }
+        .product-card p { color: var(--text-dim); line-height: 1.7; font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .product-features { list-style: none; }
+        .product-features li {
+            padding: 0.5rem 0; color: var(--text-dim); font-size: 0.85rem;
+            display: flex; align-items: center; gap: 0.75rem; font-weight: 500;
+        }
+        .product-features li::before {
+            content: ''; width: 6px; height: 6px;
+            background: var(--lime); border-radius: 50%; flex-shrink: 0;
+        }
+
+        .fade-up { opacity: 0; transform: translateY(40px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+        /* SCANTRAK SECTION */
+        .scantrak-section { background: var(--bg-elevated); padding: 6rem 3rem; }
+        .scantrak-inner { max-width: 1200px; margin: 0 auto; }
+        .scantrak-header { text-align: center; margin-bottom: 4rem; }
+        .scantrak-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 3rem; }
+        .scantrak-card {
+            background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+            padding: 2rem 1.5rem; text-align: center; transition: all 0.3s; position: relative; overflow: hidden;
+        }
+        .scantrak-card::before {
+            content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+            background: var(--border); transition: all 0.3s;
+        }
+        .scantrak-card:hover::before { background: var(--lime); box-shadow: 0 0 15px rgba(204,255,0,0.2); }
+        .scantrak-card:hover { border-color: var(--border-light); transform: translateY(-4px); }
+        .scantrak-icon { font-size: 2.5rem; margin-bottom: 1rem; line-height: 1; }
+        .scantrak-card h4 {
+            font-size: 0.75rem; font-weight: 800; letter-spacing: 2px;
+            text-transform: uppercase; color: var(--lime); margin-bottom: 0.75rem;
+        }
+        .scantrak-card p { color: var(--text-dim); font-size: 0.9rem; line-height: 1.6; }
+        .scantrak-cta { text-align: center; }
+
+        @media (max-width: 1024px) { .profile-inner { grid-template-columns: 1fr; text-align: center; } .profile-image-wrap { display: flex; justify-content: center; } .profile-socials { justify-content: center; } }
+        @media (max-width: 900px) { .sidebar { display: none; } .main { margin-left: 0; } .navbar { left: 0; } .scantrak-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .navbar { padding: 0 1.5rem; } section, .hero { padding: 4rem 1.5rem; } .hero { padding-top: 5rem; } .hero-buttons { flex-direction: column; } .btn-lime, .btn-dark { width: 100%; justify-content: center; } .scantrak-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <div class="sidebar-icon active" title="Home">🏠</div>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-icon" title="Profile">👤</div>
+        </div>
+        <div class="sidebar-bottom">
+            <div class="sidebar-icon" title="Settings">⚙️</div>
+            <div class="sidebar-icon" title="Help">❓</div>
+        </div>
+    </aside>
+
+    <div class="main">
+        <nav class="navbar">
+            <div class="logo">
+                <svg viewBox="0 0 140 44" class="wolverine-logo">
+                    <text x="22" y="32" fill="#fff" font-family="Inter, sans-serif" font-weight="900" font-size="28" letter-spacing="-2">A</text>
+                    <text x="52" y="32" fill="#fff" font-family="Inter, sans-serif" font-weight="900" font-size="28" letter-spacing="-2">D</text>
+                </svg>
+            </div>
+            <div class="nav-links">
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#scantrak" class="nav-link">ScanTrak</a>
+                <a href="#contact" class="nav-cta">START A PROJECT</a>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-label">TRADER · FREELANCE CAD · HARD/SOFT ENGINEER</span>
+                <div class="hero-showcase" style="display:grid; grid-template-columns: 340px 1fr; gap:2rem; margin-top:2rem; align-items:start;">
+                    <div class="hero-photo-card" style="background:var(--surface); border:1px solid var(--border); border-radius:20px; padding:2rem;">
+                        <div class="hero-photo-wrap" style="position:relative; margin-bottom:1.5rem;">
+                            <img src="profile.png" alt="Angelito Davids" style="width:100%; aspect-ratio:1; object-fit:cover; border-radius:14px; border:2px solid var(--border); display:block;">
+                            <div style="position:absolute; bottom:-10px; right:1rem; background:var(--lime); color:#000; padding:0.4rem 1rem; font-size:0.7rem; font-weight:800; letter-spacing:2px; text-transform:uppercase; border-radius:4px;">FOUNDER</div>
+                        </div>
+                        <div class="hero-photo-info">
+                            <h2 style="font-size:1.6rem; font-weight:900; letter-spacing:-1px; color:#fff; margin-bottom:0.5rem;">ANGELITO <span style="color:var(--lime);">DAVIDS</span></h2>
+                            <p style="font-size:0.75rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--lime); margin-bottom:1rem;">TRADER · ENGINEER · BUILDER</p>
+                            <p style="color:var(--text-dim); font-size:0.9rem; line-height:1.7;">I build the tools I use every day. Guard.Angel protects my trades. MODKRAFT builds the future. Lurch.AI sees what others miss.</p>
+                        </div>
+                    </div>
+                    <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+                        <div style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:2rem; cursor:pointer;">
+                            <span style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--text-muted); letter-spacing:2px; margin-bottom:1rem; display:block;">01</span>
+                            <h3 style="font-size:1.6rem; font-weight:900; letter-spacing:-1px; color:#fff; margin-bottom:0.25rem;">GUARD.ANGEL</h3>
+                            <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--lime); margin-bottom:1rem;">TRDE.CREED</p>
+                            <p style="color:var(--text-dim); font-size:0.9rem; line-height:1.7;">The protection layer I built for my own trading.</p>
+                        </div>
+                        <div style="background:var(--surface); border:1px solid var(--border); border-radius:16px; padding:2rem; cursor:pointer;">
+                            <span style="font-family:'JetBrains Mono',monospace; font-size:0.7rem; color:var(--text-muted); letter-spacing:2px; margin-bottom:1rem; display:block;">02</span>
+                            <h3 style="font-size:1.6rem; font-weight:900; letter-spacing:-1px; color:#fff; margin-bottom:0.25rem;">MODMINER</h3>
+                            <p style="font-size:0.7rem; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--lime); margin-bottom:1rem;">MODKRAFT</p>
+                            <p style="color:var(--text-dim); font-size:0.9rem; line-height:1.7;">Heavy-duty tracked mining platform engineered for modularity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="profile-section" id="profile">
+            <div class="profile-inner">
+                <div class="profile-image-wrap">
+                    <img src="profile.png" alt="Angelito Davids" class="profile-image">
+                    <div class="profile-image-badge">FOUNDER</div>
+                </div>
+                <div class="profile-text">
+                    <span class="section-label">ABOUT</span>
+                    <h2>ANGELITO <span>DAVIDS</span></h2>
+                    <div class="profile-role">🛡️ TRADER · FREELANCE CAD · HARD/SOFT ENGINEER</div>
+                    <p>Building protection layers for traders and engineered systems for industry. Guard.Angel, MODMINER, and Lurch.AI represent a unified philosophy: <strong style="color:var(--lime)">discipline, modularity, and intelligent execution</strong>.</p>
+                    <div class="profile-socials">
+                        <a href="https://github.com/AnglelitoDavidsdev" title="GitHub">GH</a>
+                        <a href="mailto:contact@anglelitodavids.com" title="Email">@</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="products">
+            <div class="fade-up">
+                <span class="section-label">PORTFOLIO / 01–04</span>
+                <h2 class="section-title">PRODUCT <span class="lime">SYSTEMS</span></h2>
+                <p class="section-desc">Flagship products engineered around protection, modularity, and intelligent execution.</p>
+            </div>
+            <div class="products-grid">
+                <div class="product-card fade-up">
+                    <span class="product-number">01 / TRDERCREED</span>
+                    <h3>GUARD.ANGEL</h3>
+                    <span class="brand">TRDERCREED</span>
+                    <p>Manual trading control with automated protection and disciplined position management.</p>
+                    <ul class="product-features">
+                        <li>Automated stop-loss protection</li>
+                        <li>Disciplined position sizing</li>
+                    </ul>
+                </div>
+                <div class="product-card fade-up">
+                    <span class="product-number">02 / MODKRAFT</span>
+                    <h3>MODMINER</h3>
+                    <span class="brand">MODKRAFT</span>
+                    <p>A heavy-duty tracked mining platform engineered around modularity and serviceability.</p>
+                    <ul class="product-features">
+                        <li>Configurable platform architecture</li>
+                        <li>Demanding environment design</li>
+                    </ul>
+                </div>
+                <div class="product-card fade-up">
+                    <span class="product-number">03 / LURCH.AI</span>
+                    <h3>LURCH.AI</h3>
+                    <span class="brand">COMING SOON</span>
+                    <p>Intelligent market analysis powered by machine learning. Finds high-probability setups.</p>
+                    <ul class="product-features">
+                        <li>ML-powered pattern recognition</li>
+                        <li>Real-time signal generation</li>
+                    </ul>
+                </div>
+                <div class="product-card fade-up">
+                    <span class="product-number">04 / SCANTRAK</span>
+                    <h3>SCANTRAK</h3>
+                    <span class="brand">SURVEY & SCAN</span>
+                    <p>Precision 3D scanning and terrain mapping for mining, construction, and industrial inspection.</p>
+                    <ul class="product-features">
+                        <li>LiDAR high-resolution scanning</li>
+                        <li>Terrain mapping & volume calc</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="scantrak" class="scantrak-section">
+            <div class="scantrak-inner">
+                <div class="scantrak-header fade-up">
+                    <span class="section-label">SURVEY & SCAN</span>
+                    <h2 class="section-title">SCAN<span class="lime">TRAK</span></h2>
+                    <p class="section-desc">Precision 3D scanning and terrain mapping for mining, construction, and industrial inspection. Built for the field.</p>
+                </div>
+                <div class="scantrak-grid fade-up">
+                    <div class="scantrak-card">
+                        <div class="scantrak-icon">📡</div>
+                        <h4>LiDAR SCANNING</h4>
+                        <p>High-resolution LiDAR sensors capture millions of data points per second for accurate 3D models of terrain and structures.</p>
+                    </div>
+                    <div class="scantrak-card">
+                        <div class="scantrak-icon">🗺️</div>
+                        <h4>TERRAIN MAPPING</h4>
+                        <p>Generate contour maps, volume calculations, and surface models. Perfect for site surveys, stockpile management, and excavation planning.</p>
+                    </div>
+                    <div class="scantrak-card">
+                        <div class="scantrak-icon">🏗️</div>
+                        <h4>STRUCTURAL INSPECTION</h4>
+                        <p>Monitor asset integrity with drone-based scans. Identify deformation, cracks, and wear on industrial equipment and infrastructure.</p>
+                    </div>
+                    <div class="scantrak-card">
+                        <div class="scantrak-icon">🤖</div>
+                        <h4>MODMINER INTEGRATION</h4>
+                        <p>ScanTrak data feeds directly into MODMINER operations for automated path planning, excavation guidance, and real-time site awareness.</p>
+                    </div>
+                </div>
+                <div class="scantrak-cta fade-up">
+                    <a href="#contact" class="btn-lime">REQUEST A SCAN →</a>
+                </div>
+            </div>
+        </section>
+
+        <footer id="contact">
+            <div class="footer-inner" style="max-width:1200px; margin:0 auto; text-align:center;">
+                <div class="footer-logo" style="font-size:2rem; font-weight:900; letter-spacing:-2px; color:#fff; margin-bottom:1rem;">AD<span style="color:var(--lime);">.</span></div>
+                <p style="color:var(--text-dim); margin-bottom:2.5rem; font-size:1rem;">Engineering protection. Building systems. Creating value.</p>
+                <div style="display:flex; justify-content:center; gap:2.5rem; margin-bottom:3rem; flex-wrap:wrap;">
+                    <a href="mailto:contact@anglelitodavids.com" style="color:var(--text-muted); text-decoration:none; font-size:0.85rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; transition:color 0.3s;">Email</a>
+                    <a href="https://github.com/AnglelitoDavidsdev" style="color:var(--text-muted); text-decoration:none; font-size:0.85rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; transition:color 0.3s;">GitHub</a>
+                    <a href="#products" style="color:var(--text-muted); text-decoration:none; font-size:0.85rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; transition:color 0.3s;">Products</a>
+                </div>
+                <div style="border-top:1px solid var(--border); padding-top:2rem; color:var(--text-muted); font-size:0.8rem; font-weight:500;">
+                    <p>© 2026 Angelito Davids. All rights reserved. | MODKRAFT · TRDERCREED · SCANTRAK</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
